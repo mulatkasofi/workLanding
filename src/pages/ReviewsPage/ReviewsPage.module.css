@@ -1,0 +1,249 @@
+.reviewsPageContainer {
+  background: #0c0c0c;
+  background-image: url("../../img/фон\ сетка.png");
+  height: 1520px;
+  border-radius: 80px;
+  position: relative;
+  bottom: 155px;
+  overflow: hidden;
+}
+
+.reviewsPageWrap {
+  margin: 0 auto;
+  max-width: 1290px;
+  height: 100%;
+  position: relative;
+}
+
+.reviewsPageInfo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.reviewsPageClientsInfo {
+  display: flex;
+  width: 295px;
+  gap: 5px;
+}
+
+.reviewsPageClientsCount {
+  color: #f45b0f;
+  font-size: 22px;
+  font-style: italic;
+}
+.reviewsPageTitle {
+  font-size: 60px;
+  font-style: italic;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.reviewsPageNumber {
+  font-size: 18px;
+  color: #f45b0f;
+  margin-top: 90px;
+}
+
+.reviewsPageText {
+  color: #c2c2c2;
+  font-size: 18px;
+  width: 200px;
+  margin-left: 325px;
+}
+
+.reviewsPageCLientsText {
+  color: #c2c2c2;
+  font-size: 18px;
+}
+
+.freelanceProfileLink {
+  color: #f45b0f;
+  text-decoration: underline;
+}
+
+.reviewsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.reviewWrapper {
+  position: absolute;
+  height: 300px;
+  width: 429px;
+  cursor: pointer;
+}
+
+.reviewItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(200%);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.reviewWrapper:nth-child(1) {
+  top: 20%;
+  right: 25%;
+}
+
+.reviewWrapper:nth-child(2) {
+  top: 35%;
+}
+
+.reviewWrapper:nth-child(3) {
+  top: 50%;
+  right: 0;
+}
+.reviewWrapper:nth-child(4) {
+  bottom: 15%;
+  left: 10%;
+}
+.reviewWrapper:nth-child(5) {
+  bottom: 2%;
+  right: 5%;
+}
+
+.reviewItem.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.clipIcon {
+  position: absolute;
+  top: -1000%;
+  left: 50%;
+  transform: translateY(0);
+  transition: top 0.5s ease-in-out;
+}
+
+.clipVisible {
+  top: -55px;
+  z-index: 4;
+}
+
+.reviewTextWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-top: 50px;
+}
+
+@media (max-width: 1420px) {
+  .reviewsPageWrap {
+    max-width: 1025px;
+  }
+
+  .reviewsPageTitle {
+    font-size: 40px;
+  }
+
+  .reviewWrapper:nth-child(1) {
+    right: 10%;
+  }
+
+  .reviewWrapper:nth-child(4) {
+    left: 0;
+  }
+  .reviewWrapper:nth-child(5) {
+    bottom: 2%;
+    right: 5%;
+  }
+}
+
+@media (max-width: 1040px) {
+  .reviewsPageWrap {
+    max-width: 645px;
+  }
+  .reviewsPageContainer {
+    height: 2180px;
+  }
+
+  .reviewsPageClientsInfo {
+    display: none;
+  }
+  .reviewsPageText {
+    margin-left: 200px;
+  }
+  .reviewWrapper:nth-child(1) {
+    top: 15%;
+  }
+
+  .reviewWrapper:nth-child(2) {
+    top: 30%;
+  }
+
+  .reviewWrapper:nth-child(3) {
+    top: 50%;
+  }
+  .reviewWrapper:nth-child(4) {
+    bottom: 19%;
+  }
+  .reviewWrapper:nth-child(5) {
+    bottom: 1%;
+  }
+}
+
+@media (max-width: 660px) {
+  .reviewsPageWrap {
+    max-width: 325px;
+  }
+  .reviewsPageTitle {
+    font-size: 28px;
+  }
+  .reviewsPageNumber,
+  .reviewsPageText {
+    font-size: 14px;
+  }
+  .reviewsPageContainer {
+    height: 1650px;
+  }
+  .reviewsPageClientsInfo {
+    display: none;
+  }
+  .reviewsPageText {
+    margin-left: 85px;
+  }
+  .reviewItem {
+    position: initial;
+  }
+  .reviewWrapper {
+    position: relative;
+    height: auto;
+    margin-top: 60px;
+    width: auto;
+  }
+  .clipIcon {
+    width: 25px;
+    height: 40px;
+    top: -1500%;
+  }
+  .clipVisible {
+    top: -30px;
+  }
+  .reviewWrapper:nth-child(1) {
+    top: initial;
+    right: initial;
+  }
+
+  .reviewWrapper:nth-child(2) {
+    top: initial;
+  }
+
+  .reviewWrapper:nth-child(3) {
+    top: initial;
+    right: initial;
+  }
+  .reviewWrapper:nth-child(4) {
+    bottom: initial;
+    left: initial;
+  }
+  .reviewWrapper:nth-child(5) {
+    bottom: initial;
+    right: initial;
+  }
+}

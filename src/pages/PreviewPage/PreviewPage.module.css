@@ -1,0 +1,335 @@
+.previewPageSpan {
+  color: #f45b0f;
+}
+
+.previewPageSpanName {
+  color: #f45b0f;
+}
+.previewPageTitle {
+  font-size: 95px;
+  font-weight: 550;
+  text-align: center;
+  margin-top: 65px;
+}
+
+.previewPageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.fireIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transform: translateY(-100%);
+  opacity: 1;
+  margin: 0 auto;
+}
+
+.animate {
+  animation: fadeInFromTop 1.5s ease forwards;
+  animation-delay: 1.5s;
+}
+
+.rotate {
+  transform: rotate(20deg);
+  transition: 0.5s ease-in-out;
+}
+
+@keyframes fadeInFromTop {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(250%);
+    opacity: 1;
+    display: none;
+  }
+}
+
+.previewPageImage {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(-20%);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.showImage {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.previewPageWrap {
+  max-width: 1288px;
+}
+
+.previewPageSpanRight {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 90px;
+}
+
+.userPhoto {
+  margin: 0 18px;
+  transition: 1.5s ease-in-out;
+}
+
+.previewPageBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previewPageContainerActive {
+  position: relative;
+}
+
+.previewPageWrap {
+  max-width: 1288px;
+}
+
+.previewPageSpanRight {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-right: 90px;
+}
+
+.userPhoto {
+  margin: 0 18px;
+}
+
+.previewPageBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.infoElement {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  display: none;
+}
+
+.infoElementText {
+  color: #313131;
+  font-size: 18px;
+  text-align: left;
+}
+
+.infoElementSpan {
+  color: #f45b0f;
+}
+
+.previewPageInfoBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 850px;
+}
+.languageText {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+}
+.languageBlock {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  gap: 4px;
+}
+
+.languageTextCLick {
+  color: #f45b0f;
+}
+
+.userImageAdaptive {
+  display: none;
+}
+
+.lovesPerfectAdaptive {
+  display: none;
+}
+
+.languageAdaptive {
+  display: block;
+}
+.andComfortableRU {
+  display: none;
+}
+
+.infoElementsAdaptive {
+  display: none;
+}
+.languageAdaptive {
+  display: none;
+}
+.fireIconAdaptive {
+  display: none;
+}
+@media (max-width: 1420px) {
+  .previewPageTitle {
+    margin-top: 60px;
+    font-size: 74px;
+  }
+  .userPhoto {
+    width: 110px;
+    height: 110px;
+  }
+  .previewPageWrap {
+    max-width: 1025px;
+  }
+  .previewPageInfoBlock {
+    min-width: 640px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .previewPageTitle {
+    margin: 35px 0 130px 0;
+    font-size: 63px;
+    text-align: left;
+  }
+  .userPhoto {
+    display: none;
+  }
+  .userImageAdaptive {
+    display: inline;
+  }
+  .userPhotoAdaptive {
+    position: relative;
+    top: 15px;
+    width: 90px;
+    height: 90px;
+    margin: 0 18px;
+    transition: 1.5s ease-in-out;
+  }
+  .previewPageWrap {
+    max-width: 645px;
+  }
+  .previewPageInfoBlock {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 60px;
+  }
+  .previewPageBlock {
+    text-align: right;
+    max-width: 600px;
+  }
+  .previewPageSpanRight {
+    margin: 0;
+  }
+  .previewPageSpanName {
+    display: none;
+  }
+  .name {
+    display: block;
+  }
+  .lovesPerfect {
+    display: none;
+  }
+  .lovesPerfectAdaptive {
+    display: inline;
+  }
+  .andComfortable {
+    display: none;
+  }
+  .languageAdaptive {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+  }
+  .language {
+    display: none;
+  }
+  .andComfortableRU {
+    display: inline;
+  }
+}
+
+@media (max-width: 660px) {
+  .infoElements {
+    display: none;
+  }
+  .previewPageSpanRight {
+    display: block;
+  }
+  .infoElementsAdaptive {
+    display: block;
+  }
+  .previewPageTitle {
+    margin-top: 15px;
+    font-size: 40px;
+    text-align: left;
+    max-width: 310px;
+  }
+  .userImageAdaptive {
+    position: absolute;
+    margin-left: 10px;
+  }
+  .userPhotoAdaptive {
+    position: absolute;
+    top: 110%;
+    right: -10%;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+  }
+  .previewPageWrap {
+    max-width: 325px;
+  }
+  .previewPageInfoBlock {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    min-width: 325px;
+    align-items: flex-start;
+  }
+  .previewPageBlock {
+    display: block;
+    text-align: left;
+    max-width: 325px;
+  }
+  .previewPageSpanRight {
+    margin: 0;
+  }
+
+  .languageAdaptive {
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+  .infoElementText {
+    font-size: 14px;
+  }
+  .fireIcon #fire {
+    display: none;
+  }
+  .fireIconAdaptive {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateY(-100%);
+    opacity: 1;
+    margin: 0 auto;
+  }
+}

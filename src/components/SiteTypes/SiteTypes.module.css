@@ -1,0 +1,107 @@
+.siteTypesWrap {
+  border-radius: 20px;
+  background: #ffffff0d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.siteTypeInfo {
+  padding: 30px 22px;
+}
+.siteTypes {
+  display: flex;
+  gap: 2px;
+}
+
+.siteTypeTitle {
+  color: #ffff;
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.siteTypesLabel {
+  padding: 10px 14px;
+  border-radius: 100px;
+  border: 1px solid #ffffff33;
+  background: #0000004d;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  font-style: italic;
+}
+
+.siteTypeText {
+  font-size: 18px;
+  color: #c2c2c2;
+  margin-top: 30px;
+}
+
+.siteTypeTermsPrice {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.siteTypeFooter {
+  background: #ffffff14;
+  border-radius: 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.siteTypePrice {
+  font-size: 22px;
+  color: #f45b0f;
+  margin-left: 23px;
+  font-style: italic;
+}
+
+.siteTypeTerm {
+  font-size: 14px;
+  color: #ffff;
+  font-style: italic;
+}
+
+.siteTypeButton {
+  width: 46px;
+  height: 46px;
+  border-radius: 100px;
+  background: #f45b0f;
+  border: none;
+  margin-right: 5px;
+}
+.siteTypeButton:hover{
+    background: #f48750;
+}
+@media (max-width: 1040px) {
+  .siteTypesWrap {
+    min-width: 315px;
+    width: 100%;
+  }
+  .siteTypeInfo {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 660px) {
+  .siteTypeTitle {
+    font-size: 18px;
+  }
+  .siteTypeText {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  .siteTypesLabel {
+    padding: 4px 10px;
+    text-align: center;
+  }
+  .siteTypePrice {
+    font-size: 18px;
+  }
+}

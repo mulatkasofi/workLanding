@@ -1,0 +1,145 @@
+.headerLink {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 550;
+  color: #313131;
+  margin-top: 4px;
+}
+
+.headerLinkInst {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 550;
+  color: #313131;
+  position: absolute;
+  right: 25px;
+  bottom: 80%;
+  margin-top: 4px;
+}
+
+.writeMeIcon {
+  position: relative;
+  top: -6px;
+}
+
+.headerLinkWrap {
+  display: flex;
+  gap: 10px;
+}
+
+.headerWrap {
+  display: flex;
+  justify-content: space-between;
+  width: 1288px;
+  margin: 20px auto 0 auto;
+}
+
+.logoIcon {
+  display: flex;
+  justify-content: center;
+}
+.burgerIcon {
+  display: none;
+}
+.mediaLinks {
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 1420px) {
+  .headerWrap {
+    width: 1025px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .headerWrap {
+    width: 645px;
+  }
+}
+
+@media (max-width: 660px) {
+  .headerWrap {
+    width: 325px;
+    align-items: flex-start;
+  }
+  .headerLink {
+    font-size: 14px;
+  }
+  .headerLinkInst {
+    font-size: 14px;
+    right: 5px;
+    bottom: 70%;
+  }
+  .writeMe {
+    width: 120px;
+    height: 65px;
+  }
+  .writeMeIcon {
+    top: 0px;
+  }
+  .burgerIcon {
+    display: inline;
+    border: none;
+    background-color: transparent;
+    z-index: 100;
+  }
+  .logo {
+    width: 25px;
+    height: 25px;
+  }
+
+  .burger {
+    width: 265px;
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    background: #ffff;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  .menuWrap {
+    display: none;
+  }
+  .closeIcon {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    text-align: right;
+    position: relative;
+    bottom: 30px;
+    right: 30px;
+  }
+  .burgerWrap {
+    position: fixed;
+    overflow-y: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    z-index: 100;
+  }
+  .backgroundImg {
+    position: absolute;
+    right: 0;
+    height: 100%;
+  }
+  .burgerHeaderWrap {
+    display: flex;
+    position: relative;
+    z-index: 300;
+  }
+  .menuAdaptiveWrap {
+    margin-top: 50px;
+    position: relative;
+    z-index: 300;
+  }
+  .contactButtonWrapper{
+    margin-top: auto;
+    position: relative;
+    z-index: 300;
+  }
+}

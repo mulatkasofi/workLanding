@@ -1,0 +1,129 @@
+.principlesPageContainer {
+  background-image: url("../../img/backgroundOneRound.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 2;
+  bottom: 155px;
+}
+.principlesPageInfoWrap {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 100px 0 50px 0;
+}
+
+.principlesPageNumber {
+  color: #f45b0f;
+  font-size: 18px;
+}
+
+.principlesPageTitle {
+  font-size: 60px;
+  color: #313131;
+}
+
+.principlesPageText {
+  font-size: 76px;
+  color: #f45b0f;
+  font-style: italic;
+  text-align: center;
+  width: 990px;
+  margin: 0 auto;
+}
+
+.principlesPageWrap {
+  position: relative;
+  height: 550px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.principlesPageCard {
+  position: absolute;
+}
+
+.principlesPageCard:nth-child(2) {
+  top: 0;
+}
+
+.principlesPageCard:nth-child(3) {
+  top: 0;
+  right: 0;
+}
+.principlesPageCard:nth-child(4) {
+  bottom: 50px;
+  right: 140px;
+}
+
+.principlesPageCard:nth-child(5) {
+  bottom: 20px;
+  left: 170px;
+}
+@media (max-width: 1420px) {
+  .principlesPageInfoWrap {
+    max-width: 1025px;
+  }
+  .principlesPageCard:nth-child(4) {
+    bottom: 0;
+    right: 0;
+  }
+
+  .principlesPageCard:nth-child(5) {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media (max-width: 1040px) {
+  .principlesPageContainer {
+    background-size: 200% 100%;
+  }
+  .principlesPageInfoWrap {
+    max-width: 655px;
+  }
+  .principlesPageTitle {
+    font-size: 40px;
+  }
+  .principlesPageText {
+    font-size: 64px;
+  }
+  .principlesPageCard:nth-child(2) {
+    top: 0;
+  }
+
+  .principlesPageCard:nth-child(3) {
+    top: 10%;
+  }
+  .principlesPageCard:nth-child(4) {
+    bottom: 2%;
+    right: 0;
+  }
+
+  .principlesPageCard:nth-child(5) {
+    bottom: 20%;
+  }
+  .principlesPageWrap {
+    height: 930px;
+  }
+}
+@media (max-width: 660px) {
+  .principlesPageText{
+    font-size: 40px;
+  }
+  .principlesPageTitle{
+    font-size: 28px;
+  }
+  .principlesPageInfoWrap{
+    max-width: 325px;
+  }
+  .principlesPageNumber{
+    font-size: 14px;
+  }
+   .principlesPageWrap {
+    height: 765px;
+  }
+   .principlesPageCard:nth-child(3) {
+    top: 20%;
+  }
+}

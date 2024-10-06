@@ -1,0 +1,141 @@
+.cardAndTermsContainer {
+  background-color: #0c0c0c;
+  background-image: url("../../img/элипсы\ фон.png");
+  background-repeat: no-repeat;
+  padding-bottom: 140px;
+  background-size: cover;
+  border-radius: 80px;
+  bottom: 155px;
+  position: relative;
+  z-index: 2;
+}
+
+.cardAndTermsWrap {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.cardAndTermsInfoContainer {
+  width: 100%;
+  padding: 90px 0 50px 0;
+}
+
+.cardAndTermsInfoWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardAndTermsTitle {
+  font-size: 60px;
+  font-style: italic;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.cardAndTermsNumber {
+  font-size: 18px;
+  color: #f45b0f;
+}
+
+.cardAndTermsText {
+  color: #c2c2c2;
+  font-size: 18px;
+  margin-left: 300px;
+  width: 315px;
+}
+
+.cardAndTermsContactMe {
+  color: #f45b0f;
+  text-decoration: underline;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+}
+
+.cardAndTermsHeaderLinkInst {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 550;
+  color: #ffffff;
+  position: absolute;
+  right: 25px;
+  bottom: 87%;
+}
+
+.cardAndTermsWriteMeIcon {
+  position: relative;
+  top: -6px;
+}
+
+.cardAndTermsHeaderLinkWrap {
+  display: flex;
+  gap: 10px;
+}
+
+.cardAndTermsHeaderLink {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 550;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+.cardAndTermsCards {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 1420px) {
+  .cardAndTermsWrap {
+    max-width: 1025px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .cardAndTermsWrap {
+    max-width: 640px;
+  }
+  .cardAndTermsTitle {
+    font-size: 40px;
+  }
+  .cardAndTermsHeaderLinkWrap {
+    display: none;
+  }
+  .cardAndTermsText {
+    margin-left: 200px;
+  }
+  .cardAndTermsCards {
+    flex-wrap: wrap;
+  }
+  .cardAndTermsCard:nth-child(1) {
+    flex: 0.1;
+  }
+
+  .cardAndTermsCard:nth-child(2) {
+    flex: 0.1;
+  }
+  .cardAndTermsCard:last-child {
+    width: 100%;
+  }
+}
+
+@media (max-width: 660px) {
+  .cardAndTermsWrap {
+    max-width: 325px;
+  }
+  .cardAndTermsText {
+    margin-left: 85px;
+    font-size: 14px;
+    width: fit-content;
+  }
+  .cardAndTermsTitle {
+    font-size: 28px;
+  }
+  .cardAndTermsContactMe {
+    font-size: 14px;
+  }
+  .cardAndTermsNumber {
+    font-size: 14px;
+  }
+}

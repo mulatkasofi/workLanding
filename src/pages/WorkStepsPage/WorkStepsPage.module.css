@@ -1,0 +1,124 @@
+.workStepsPageContainer {
+  width: 100%;
+  height: 820px;
+  background-image: url("../../img/элипс\ фон\ \(1\).png");
+  background-size: 100% 200%;
+  background-position: center;
+  position: relative;
+  bottom: 80px;
+  overflow: hidden;
+}
+
+.workStepsPageInfoWrap {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding: 170px 0 50px 0;
+}
+
+.workStepsPageNumber {
+  color: #f45b0f;
+  font-size: 18px;
+}
+
+.workStepsPageTitle {
+  font-size: 60px;
+  color: #313131;
+}
+
+.carouselContainer {
+  transition: padding 1s ease;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  gap: 10px;
+  transition: transform 1s ease;
+  padding-bottom: 145px;
+  width: 100%;
+}
+
+.carouselItem {
+  flex: 0 0 25%;
+}
+
+.animating {
+  animation: returnToStart 2s ease-in-out forwards;
+}
+.paddingLeft {
+  padding-left: 320px;
+}
+.paddingLeftZero {
+  padding-left: 0;
+}
+@keyframes returnToStart {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 1420px) {
+  .workStepsPageInfoWrap {
+    max-width: 1025px;
+  }
+  .carouselContainer {
+    padding-left: 200px;
+  }
+  .paddingLeft {
+    padding-left: 200px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .workStepsPageInfoWrap {
+    max-width: 645px;
+  }
+  .carouselContainer {
+    padding-left: 50px;
+  }
+  .paddingLeft {
+    padding-left: 50px;
+  }
+  .workStepsPageTitle {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 660px) {
+  .workStepsPageInfoWrap {
+    max-width: 325px;
+    padding: 100px 0 50px 0;
+  }
+  .carouselContainer {
+    padding-left: 0;
+  }
+  .paddingLeft {
+    padding-left: 0;
+  }
+  .workStepsPageTitle {
+    font-size: 28px;
+  }
+  .carouselContainer {
+    overflow: auto;
+  }
+  .workStepsPageContainer {
+    height: 100%;
+    overflow: auto;
+  }
+  .carousel {
+    flex-direction: column;
+    transform: translateX(0) !important;
+    max-width: 325px;
+    margin: 0 auto;
+  }
+  .workStepsElements:nth-child(2n) {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .workStepsPageNumber {
+    font-size: 14px;
+  }
+}

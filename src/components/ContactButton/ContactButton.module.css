@@ -1,0 +1,61 @@
+.contactButton {
+  padding: 25px 15px;
+  border-radius: 100px;
+  background: #f45b0f;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  width: 313px;
+  position: relative;
+}
+
+.contactButtonSpan {
+  width: 42px;
+  height: 42px;
+}
+
+.contactButtonAction {
+  width: 42px;
+  height: 42px;
+  border-radius: 100px;
+  background: #ffffff;
+  border: none;
+}
+
+.contactButtonTitle {
+  font-size: 22px;
+  font-style: italic;
+  color: #ffffff;
+}
+
+.contactButton:hover {
+  background: #0c0c0c;
+}
+
+.contactButtonClick {
+  position: absolute;
+  right: 25%;
+  bottom: 15%;
+}
+
+@media (max-width: 660px) {
+  .contactButton {
+    width: 100%;
+     padding: 5px;
+  }
+  .contactButtonTitle {
+    font-size: 14px;
+  }
+  .contactButtonSpan {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contactButtonAction {
+    width: 36px;
+    height: 36px;
+  }
+}

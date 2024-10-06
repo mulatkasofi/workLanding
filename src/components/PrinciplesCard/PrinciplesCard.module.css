@@ -1,0 +1,47 @@
+.principlesCardContainer {
+  width: 315px;
+  height: 175px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.principlesCardContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(180deg, #fcf9ef 0%, #dadada 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.principlesCardImg {
+  align-self: flex-end;
+}
+.principlesCardText {
+  align-self: flex-start;
+  color: #f45b0f;
+  font-size: 18px;
+}
+
+@media (max-width: 660px) {
+  .principlesCardText {
+    font-size: 14px;
+  }
+  .principlesCardContainer {
+    width: 235px;
+    height: 125px;
+    transform: rotate(0) !important;
+  }
+}

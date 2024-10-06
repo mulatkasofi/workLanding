@@ -1,0 +1,170 @@
+{
+  "titles": {
+    "latestWork": "My latest works",
+    "workSteps": "Work steps",
+    "review": "Customer reviews",
+    "principles": "My principles at work",
+    "costAndTerms": "Cost&terms",
+    "faq": "FAQ"
+  },
+  "subtitles": {
+    "latestWorkSubtitle": "I develop designs for websites of all types: landing page, corporate, online-stores, business sites, etc.",
+    "reviewsSubtitle": "More reviews can be found on my <2>freelance profile</2>",
+    "costAndTermsSubtitle": "The cost and duration of work vary depending on the request and details of the project, so for calculation you must <1>contact me</1> and discuss the project :)"
+  },
+  "workStepsCards": {
+    "01": {
+      "title": "Acquaintance with the project",
+      "text": "We discuss your goals, objectives and scope of the project"
+    },
+    "02": {
+      "title": "Making a 50% advance payment",
+      "text": "It is also possible to split the payment page by page"
+    },
+    "03": {
+      "title": "Analysis",
+      "text": "I analyze competitors and study your strengths and weaknesses"
+    },
+    "04": {
+      "title": "References and concepts",
+      "text": "Collecting references and developing 2 design options for the first screen"
+    },
+    "05": {
+      "title": "Development of the entire website design",
+      "text": "I make the design for the entire project"
+    },
+    "06": {
+      "title": "Give the sources to Figma",
+      "text": "Preparing a layout for the developer"
+    },
+    "07": {
+      "title": "Have questions?",
+      "text": "contact me :)"
+    }
+  },
+  "reviewsCard": {
+    "01": {
+      "text": "A real pro. What more to say. It's a pleasure to work."
+    },
+    "02": {
+      "text": "The task was to design a one-page website and its mobile version. I liked that Victoria was always in touch and did her work very quickly. She was willing to make changes as the work progressed and brought in her own ideas, which were very helpful."
+    },
+    "03": {
+      "text": "Thank you! The design of the main page turned out to be at a very decent level! Victoria adhered to the specifications and promptly made adjustments. Let's continue cooperation!"
+    },
+    "04": {
+      "text": "Order a registration page. We have already worked with Victoria and now, after a long break, the task of creating a page has arisen. And again we were convinced of professionalism. Great job. There’s nothing to complain about! ) No edits. Everyone liked it. Thank you!"
+    },
+    "05": {
+      "text": "Thank you for efficiency. I will continue to contact you."
+    },
+    "happyClients": "happy clients"
+  },
+  "principlesCard": {
+    "01": {
+      "text": "I am your partner. sincere. real. who you can trust"
+    },
+    "02": {
+      "text": "I appreciate your time and my time. I deliver projects on time. or even faster without losing quality"
+    },
+    "03": {
+      "text": "Design not for design's sake. but for the sake of your sales, practicality and user friendliness"
+    },
+    "04": {
+      "text": "I communicate with you in a clear language, without complex terms and formulations"
+    },
+    "principlesText": "I create designs that stand out. Fast. Qualitatively. Beautiful."
+  },
+  "siteTypesCard": {
+    "01": {
+      "title": "One page site",
+      "type": "landing , promo website, business card website",
+      "text": "One page website on average consists of 6-8 blocks. The cost may increase/decrease depending on the number of blocks",
+      "price": "200"
+    },
+    "02": {
+      "title": "Multi-page site",
+      "type": "corporate website",
+      "text": "Website with home + internal pages. For example: SMM agency, real estate agency, cosmetology center, etc.",
+      "price": "400"
+    },
+    "03": {
+      "title": "Online-store",
+      "type": "online-store",
+      "text": "A website with a catalog, shopping cart, personal account, etc. In general, a fully functional online-store :)",
+      "price": "500"
+    },
+    "otherText": {
+      "from": "from",
+      "days": "days"
+    }
+  },
+  "modal": {
+    "contact": "Contact me",
+    "messageOn": "You can message me on",
+    "or": "or",
+    "leaveALink": "leave a link to your social network or messenger and I will contact you",
+    "send": "send",
+    "name": "name",
+    "link": "link to social network or messenger",
+    "contactButton": "contact"
+  },
+  "toggleSwitch": {
+    "spark": "spark",
+    "creative": "creativity",
+    "onWeb": "on your website"
+  },
+  "preview": {
+    "greeting": "Hello!",
+    "jobTitle": "I’m UI/UX designer",
+    "name": "Victoria",
+    "lovesPerfect": "who loves perfect",
+    "lovesPerfectAdaptive":"who loves perfect and comfortable",
+    "andComfortable": "and comfortable",
+    "experience": "1.5 years of experience",
+    "layouts": "100+ layouts developed",
+    "design": "design"
+  },
+
+  "menu": {
+    "portfolio": "portfolio",
+    "work_steps": "work steps",
+    "reviews": "reviews",
+    "price": "price",
+    "faq": "FAQ"
+  },
+
+  "faq": {
+    "01": {
+      "title": "What determine the timing and cost?",
+      "question": "The timing and cost depend on the volume and complexity of the work. For example, if this is a one-page site with 6-8 template screens, then the time frame and cost will be small. If it is a multi-page site with a unique design and non-standard solutions, then the cost will be much higher. You can always contact me and we will discuss everything in detail :)"
+    },
+    "02": {
+      "title": "How can I pay?",
+      "question": "There are several payment options: cryptocurrency, to a card of a Russian or Belarusian bank."
+    },
+    "03": {
+      "title": "Are edits and adaptations included in the price?",
+      "question": "Yes, edits and all adaptations are included in the price."
+    },
+    "04": {
+      "title": "Can you develop a full-fledged website?",
+      "question": "Yes, I can develop a fully functioning website using the Tilda website creation platform. To find out the cost please contact me :)"
+    },
+    "faqTitle": {
+      "iSuggestGoing": "I suggest going",
+      "beyound": "beyond",
+      "and": "and",
+      "establishingYourself": "establishing yourself",
+      "asABrand": "as a brand. And I'm here to",
+      "help": "help",
+      "youWith": "you with this."
+    }
+  },
+  "latestWorkSlide": {
+    "landingPage": "landing page",
+    "onlineStore": "online-store",
+    "corporate": "corporate",
+    "onlineSchool": "online-school"
+  }
+}

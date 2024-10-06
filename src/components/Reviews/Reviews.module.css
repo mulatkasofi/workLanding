@@ -1,0 +1,41 @@
+.reviewContainer {
+  padding: 20px 20px 40px 20px;
+  border: 1px solid transparent;
+  background: linear-gradient(#ffffff33, #3c3c3c 0) padding-box,
+    linear-gradient(180deg, #f45b0f 0%, #dadada 100%) border-box;
+  border-radius: 20px;
+  width: 420px;
+}
+.reviewTitle {
+  font-size: 22px;
+  font-style: italic;
+  color: #ffff;
+  margin-bottom: 15px;
+}
+
+.reviewText {
+  font-size: 18px;
+  font-weight: 400;
+  color: #c2c2c2;
+}
+
+.reviewRating {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 660px) {
+  .reviewContainer {
+    width: 320px;
+    padding: 20px;
+    transform: rotate(0) !important;
+  }
+  .reviewTitle{
+    font-size: 18px;
+  }
+  .reviewText{
+    font-size: 14px;
+  }
+}

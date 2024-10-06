@@ -1,0 +1,21 @@
+.menuItemWrap {
+  display: flex;
+  align-items: center;
+  width: 275px;
+}
+
+.menuItemText {
+  font-size: 18px;
+  font-weight: 550;
+  color: #313131;
+  text-decoration: none;
+  margin: 0;
+}
+
+.menuWrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  z-index: 100;
+  position: relative;
+}

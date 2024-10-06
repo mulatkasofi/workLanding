@@ -1,0 +1,41 @@
+.button {
+  padding: 6px;
+  margin-top: 20px;
+  border-radius: 100px;
+  background: #0c0c0c;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  border: none;
+}
+
+.buttonSpan {
+  width: 42px;
+  height: 42px;
+}
+
+.buttonAction {
+  width: 42px;
+  height: 42px;
+  border-radius: 100px;
+  background: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonTitle {
+  font-size: 18px;
+  font-style: italic;
+  color: #ffffff;
+}
+
+.button:hover {
+  background: #4d4c4c;
+}
