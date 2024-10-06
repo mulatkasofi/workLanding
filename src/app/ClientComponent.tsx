@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import i18n from "../i18n";
 
@@ -6,7 +7,7 @@ const ClientComponent = () => {
     const initializeI18n = async () => {
       await i18n.init();
       if (!i18n.language) {
-        await i18n.changeLanguage("ru"); 
+        await i18n.changeLanguage("ru");
       }
     };
 
