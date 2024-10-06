@@ -1,19 +1,24 @@
-'use client';
-import React, { useState } from 'react';
-import styles from './CostAndTermsPage.module.css';
-import Image from 'next/image';
-import Link from 'next/link';
-import writeMeIcon from '../../img/writeMe.png';
-import writeMeIconRu from '../../img/Group 1794.png';
-import SiteTypes from '../../components/SiteTypes/SiteTypes';
-import { useSiteTypesData } from '../../helpers/siteTypes';
-import { useTranslation, Trans } from 'next-i18next';
-import Modal from '../../components/ModalWindow/ModalWindow';
+"use client";
+import React, { useState } from "react";
+import styles from "./CostAndTermsPage.module.css";
+import Image from "next/image";
+import Link from "next/link";
+import writeMeIcon from "../../img/writeMe.png";
+import writeMeIconRu from "../../img/Group 1794.png";
+import SiteTypes from "../../components/SiteTypes/SiteTypes";
+import { useSiteTypesData } from "../../helpers/siteTypes";
+import { useTranslation, Trans } from "next-i18next";
+import Modal from "../../components/ModalWindow/ModalWindow";
 
 const CostAndTermsPage = () => {
   const [open, setOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const siteTypes = useSiteTypesData();
+
+  if (!i18n.isInitialized) {
+    return <div></div>;
+  }
+
   return (
     <div className={styles.cardAndTermsContainer}>
       <div className={styles.cardAndTermsWrap}>
@@ -22,7 +27,7 @@ const CostAndTermsPage = () => {
             <div>
               <p className={styles.cardAndTermsNumber}>05</p>
               <h2 className={styles.cardAndTermsTitle}>
-                {t('titles.costAndTerms')}
+                {t("titles.costAndTerms")}
               </h2>
               <p className={styles.cardAndTermsText}>
                 <Trans i18nKey="subtitles.costAndTermsSubtitle">
@@ -40,24 +45,24 @@ const CostAndTermsPage = () => {
             </div>
             <div className={styles.cardAndTermsHeaderLinkWrap}>
               <div className={styles.cardAndTermsWriteMeIcon}>
-                {i18n.language === 'ru' ? (
-                  <Image src={writeMeIconRu} alt={''} />
+                {i18n.language === "ru" ? (
+                  <Image src={writeMeIconRu} alt={""} />
                 ) : (
-                  <Image src={writeMeIcon} alt={''} />
+                  <Image src={writeMeIcon} alt={""} />
                 )}
                 <Link
-                  style={{ textDecoration: 'none' }}
+                  style={{ textDecoration: "none" }}
                   href={
-                    'https://www.instagram.com/akiv.ui.ux?igsh=MTdvZmV5azlxM3BxcA=='
+                    "https://www.instagram.com/akiv.ui.ux?igsh=MTdvZmV5azlxM3BxcA=="
                   }
                 >
                   <p className={styles.cardAndTermsHeaderLinkInst}>instagram</p>
                 </Link>
               </div>
               <Link
-                style={{ textDecoration: 'none' }}
+                style={{ textDecoration: "none" }}
                 href={
-                  'https://www.linkedin.com/in/viktoriya-volozhinskaya-415145260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_apphttps://www.linkedin.com/in/viktoriya-volozhinskaya-415145260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
+                  "https://www.linkedin.com/in/viktoriya-volozhinskaya-415145260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_apphttps://www.linkedin.com/in/viktoriya-volozhinskaya-415145260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 }
               >
                 <p className={styles.cardAndTermsHeaderLink}>linkedin</p>

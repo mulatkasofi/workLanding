@@ -21,12 +21,6 @@ const PreviewPage = () => {
   ) => {
     setSwitchState(newState);
   };
-  
-  useEffect(() => {
-    if (!i18n.language) {
-      i18n.changeLanguage("ru");
-    }
-  }, [i18n]);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -66,7 +60,9 @@ const PreviewPage = () => {
       </p>
     </div>
   );
-
+  if (!i18n.isInitialized) {
+    return <div></div>;
+  }
   return (
     <div className={styles.previewPageContainer}>
       <Image

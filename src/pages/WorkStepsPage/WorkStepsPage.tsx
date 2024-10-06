@@ -1,15 +1,15 @@
-'use client';
-import React, { useEffect, useState, useRef } from 'react';
-import styles from './WorkStepsPage.module.css';
-import WorkSteps from '../../components/WorkSteps/WorkSteps';
-import { useWorkStepsData } from '../../helpers/workSteps';
-import { useTranslation } from 'react-i18next';
-import Modal from '../../components/ModalWindow/ModalWindow';
-import cn from 'classnames';
+"use client";
+import React, { useEffect, useState, useRef } from "react";
+import styles from "./WorkStepsPage.module.css";
+import WorkSteps from "../../components/WorkSteps/WorkSteps";
+import { useWorkStepsData } from "../../helpers/workSteps";
+import { useTranslation } from "react-i18next";
+import Modal from "../../components/ModalWindow/ModalWindow";
+import cn from "classnames";
 
 const WorkStepsPage: React.FC = () => {
   const workSteps = useWorkStepsData();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
@@ -29,17 +29,17 @@ const WorkStepsPage: React.FC = () => {
 
       if (window.innerWidth <= 660) {
         setIsMobile(true);
-        document.body.style.overflowY = 'auto';
+        document.body.style.overflowY = "auto";
       } else {
         setIsMobile(false);
       }
     };
 
     updateDimensions();
-    window.addEventListener('resize', updateDimensions);
+    window.addEventListener("resize", updateDimensions);
 
     return () => {
-      window.removeEventListener('resize', updateDimensions);
+      window.removeEventListener("resize", updateDimensions);
     };
   }, []);
 
@@ -57,16 +57,16 @@ const WorkStepsPage: React.FC = () => {
     if (event.deltaY > 0) {
       if (currentSlide < maxSlides) {
         setCurrentSlide((prev) => prev + 1);
-        document.body.style.overflowY = 'hidden';
+        document.body.style.overflowY = "hidden";
       } else {
-        document.body.style.overflowY = 'auto';
+        document.body.style.overflowY = "auto";
       }
     } else if (event.deltaY < 0) {
       if (currentSlide > 0) {
         setCurrentSlide((prev) => prev - 1);
-        document.body.style.overflowY = 'hidden';
+        document.body.style.overflowY = "hidden";
       } else {
-        document.body.style.overflowY = 'auto';
+        document.body.style.overflowY = "auto";
       }
     }
 
@@ -84,11 +84,15 @@ const WorkStepsPage: React.FC = () => {
     }
   }, [currentSlide]);
 
+  if (!i18n.isInitialized) {
+    return <div></div>;
+  }
+  
   return (
     <div className={styles.workStepsPageContainer}>
       <div className={styles.workStepsPageInfoWrap} onWheel={handleScroll}>
         <p className={styles.workStepsPageNumber}>02</p>
-        <h2 className={styles.workStepsPageTitle}>{t('titles.workSteps')}</h2>
+        <h2 className={styles.workStepsPageTitle}>{t("titles.workSteps")}</h2>
       </div>
       <div
         className={cn(styles.carouselContainer, {

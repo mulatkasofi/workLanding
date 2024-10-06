@@ -1,20 +1,20 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import styles from './WorkPage.module.css';
-import Image from 'next/image';
-import arrowLeft from '../../assets/arrowLeft.svg';
-import arrowRight from '../../assets/arrowRight.svg';
-import Link from 'next/link';
-import cn from 'classnames';
-import { useImageForSliderArrowData } from '../../helpers/imageForSlider';
-import { useTranslation } from 'react-i18next';
+"use client";
+import React, { useState, useEffect } from "react";
+import styles from "./WorkPage.module.css";
+import Image from "next/image";
+import arrowLeft from "../../assets/arrowLeft.svg";
+import arrowRight from "../../assets/arrowRight.svg";
+import Link from "next/link";
+import cn from "classnames";
+import { useImageForSliderArrowData } from "../../helpers/imageForSlider";
+import { useTranslation } from "react-i18next";
 
 const WorkPage = () => {
   const imageForSliderArrow = useImageForSliderArrowData();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [visibleSlides, setVisibleSlides] = useState(4);
   const [isMobileView, setIsMobileView] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const updateView = () => {
@@ -28,10 +28,10 @@ const WorkPage = () => {
     };
 
     updateView();
-    window.addEventListener('resize', updateView);
+    window.addEventListener("resize", updateView);
 
     return () => {
-      window.removeEventListener('resize', updateView);
+      window.removeEventListener("resize", updateView);
     };
   }, [imageForSliderArrow.length]);
 
@@ -48,16 +48,19 @@ const WorkPage = () => {
   };
 
   const isNextDisabled = currentSlide >= visibleSlides - 3;
-
+  
+  if (!i18n.isInitialized) {
+    return <div></div>;
+  }
   return (
     <div className={styles.workPageContainer}>
       <div className={styles.workPageInfoContainer}>
         <div className={styles.workPageInfoWrap}>
           <div>
             <p className={styles.workPageNumber}>01</p>
-            <h2 className={styles.workPageTitle}>{t('titles.latestWork')}</h2>
+            <h2 className={styles.workPageTitle}>{t("titles.latestWork")}</h2>
             <p className={styles.workPageText}>
-              {t('subtitles.latestWorkSubtitle')}
+              {t("subtitles.latestWorkSubtitle")}
             </p>
           </div>
           <div className={styles.sliderContainer}>

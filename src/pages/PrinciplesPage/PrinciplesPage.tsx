@@ -1,14 +1,14 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import styles from './PrinciplesPage.module.css';
+"use client";
+import React, { useEffect, useState } from "react";
+import styles from "./PrinciplesPage.module.css";
 
-import { usePrinciplesData } from '../../helpers/principles';
-import PrinciplesCard from '../../components/PrinciplesCard/PrinciplesCard';
-import { useTranslation } from 'react-i18next';
+import { usePrinciplesData } from "../../helpers/principles";
+import PrinciplesCard from "../../components/PrinciplesCard/PrinciplesCard";
+import { useTranslation } from "react-i18next";
 
 const PrinciplesPage: React.FC = () => {
   const principles = usePrinciplesData();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -18,20 +18,22 @@ const PrinciplesPage: React.FC = () => {
       setOffset({ x, y });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
-
+  if (!i18n.isInitialized) {
+    return <div></div>;
+  }
   return (
     <div className={styles.principlesPageContainer}>
       <div className={styles.principlesPageInfoWrap}>
         <p className={styles.principlesPageNumber}>04</p>
-        <h2 className={styles.principlesPageTitle}>{t('titles.principles')}</h2>
+        <h2 className={styles.principlesPageTitle}>{t("titles.principles")}</h2>
         <div className={styles.principlesPageWrap}>
           <h1 className={styles.principlesPageText}>
-            {t('principlesCard.principlesText')}
+            {t("principlesCard.principlesText")}
           </h1>
           <>
             {principles.map((i, index) => (
