@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import styles from './ModalWindow.module.css';
+import styles from './ModalWIndow.module.css';
 import cross from '../../assets/cross.svg';
 import Link from 'next/link';
 import Image from 'next/image';
