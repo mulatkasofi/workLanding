@@ -108,22 +108,23 @@
   }
 }
 @media (max-width: 660px) {
-  .principlesPageText{
+  .principlesPageText {
     font-size: 40px;
   }
-  .principlesPageTitle{
+  .principlesPageTitle {
     font-size: 28px;
   }
-  .principlesPageInfoWrap{
+  .principlesPageInfoWrap {
     max-width: 325px;
+    padding: 40px 0 50px 0;
   }
-  .principlesPageNumber{
+  .principlesPageNumber {
     font-size: 14px;
   }
-   .principlesPageWrap {
+  .principlesPageWrap {
     height: 765px;
   }
-   .principlesPageCard:nth-child(3) {
+  .principlesPageCard:nth-child(3) {
     top: 20%;
   }
 }

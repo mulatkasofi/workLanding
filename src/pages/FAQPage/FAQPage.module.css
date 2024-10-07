@@ -38,6 +38,7 @@
   text-align: center;
   line-height: 1.2;
   margin-top: 100px;
+  transition: color 1s ease;
 }
 
 .display {
@@ -70,17 +71,21 @@
     font-size: 40px;
   }
   .FAQText {
-    font-size: 57px;
-    text-align: left;
+    font-size: 64px;
+    text-align: center;
   }
   .img {
     display: none;
+  }
+  .display {
+    display: block;
   }
 }
 
 @media (max-width: 660px) {
   .FAQPageInfoWrap {
     max-width: 325px;
+    padding: 40px 0 0 0;
   }
   .FAQPageTitle {
     font-size: 28px;

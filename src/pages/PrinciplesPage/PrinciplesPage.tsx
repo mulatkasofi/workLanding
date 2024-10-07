@@ -18,9 +18,19 @@ const PrinciplesPage: React.FC = () => {
       setOffset({ x, y });
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      const touch = e.touches[0]; 
+      const x = (window.innerWidth / 2 - touch.clientX) / 30;
+      const y = (window.innerHeight / 2 - touch.clientY) / 30;
+      setOffset({ x, y });
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove);
+
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 

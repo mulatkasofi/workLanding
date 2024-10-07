@@ -138,4 +138,10 @@
   .cardAndTermsNumber {
     font-size: 14px;
   }
+  .cardAndTermsInfoContainer {
+    padding: 40px 0 40px 0;
+  }
+  .cardAndTermsContainer {
+    padding-bottom: 40px;
+  }
 }

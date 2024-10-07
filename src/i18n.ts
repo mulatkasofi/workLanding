@@ -18,7 +18,9 @@ i18n
       useSuspense: false,
     },
     backend: {
-      loadPath: "/locales/{{lng}}/{{ns}}.json",
+      backend: {
+        loadPath: `${process.env.NEXT_PUBLIC_BASE_URL}/locales/{{lng}}/{{ns}}.json`,
+      },
     },
   });
 

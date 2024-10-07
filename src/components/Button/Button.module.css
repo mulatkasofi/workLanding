@@ -39,3 +39,16 @@
 .button:hover {
   background: #4d4c4c;
 }
+
+@media (max-width: 660px) {
+  .buttonTitle {
+    font-size: 14px;
+  }
+  .buttonSpan {
+    width: 32px;
+    height: 32px;
+  }
+  .buttonAction {
+  width: 32px;
+  height: 32px;}
+}

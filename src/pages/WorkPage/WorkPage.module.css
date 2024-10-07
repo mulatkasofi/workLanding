@@ -216,4 +216,10 @@
   .workPageNumber {
     font-size: 14px;
   }
+  .workPageInfoContainer {
+     padding: 40px 0 30px 0;
+  }
+  .slidesWrapper{
+    padding-bottom: 30px;
+  }
 }

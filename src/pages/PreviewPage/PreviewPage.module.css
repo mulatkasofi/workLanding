@@ -29,6 +29,19 @@
   transform: translateY(-100%);
   opacity: 1;
   margin: 0 auto;
+  width: 100%;
+}
+
+.fireIconImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transform: translateY(-100%);
+  opacity: 1;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .animate {
@@ -62,7 +75,9 @@
   width: 100%;
   opacity: 0;
   transform: translateY(-20%);
-  transition: opacity 1s ease, transform 1s ease;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 .showImage {
@@ -146,6 +161,7 @@
   border: none;
   background: transparent;
   font-size: 18px;
+  color: black;
 }
 .languageBlock {
   display: flex;
@@ -299,7 +315,7 @@
     flex-direction: column;
     gap: 20px;
     justify-content: flex-start;
-    min-width: 325px;
+    min-width: 310px;
     align-items: flex-start;
   }
   .previewPageBlock {
@@ -318,7 +334,7 @@
   .infoElementText {
     font-size: 14px;
   }
-  .fireIcon #fire {
+  .fireIconImage {
     display: none;
   }
   .fireIconAdaptive {
@@ -331,5 +347,6 @@
     transform: translateY(-100%);
     opacity: 1;
     margin: 0 auto;
+    width: 100%;
   }
 }

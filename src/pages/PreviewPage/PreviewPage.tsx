@@ -75,7 +75,7 @@ const PreviewPage = () => {
         <Image
           src={fireIcon}
           alt="Fire Icon"
-          className={styles.fireIcon}
+          className={styles.fireIconImage}
           id="fire"
         />
         <Image

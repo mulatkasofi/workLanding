@@ -119,7 +119,7 @@
     "jobTitle": "I’m UI/UX designer",
     "name": "Victoria",
     "lovesPerfect": "who loves perfect",
-    "lovesPerfectAdaptive":"who loves perfect and comfortable",
+    "lovesPerfectAdaptive": "who loves perfect and comfortable",
     "andComfortable": "and comfortable",
     "experience": "1.5 years of experience",
     "layouts": "100+ layouts developed",
@@ -166,5 +166,8 @@
     "onlineStore": "online-store",
     "corporate": "corporate",
     "onlineSchool": "online-school"
+  },
+  "buttons": {
+    "moreButton": "more works"
   }
 }

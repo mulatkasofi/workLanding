@@ -1,58 +1,44 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./FAQPage.module.css";
 import Image from "next/image";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import SplitType from "split-type";
-import FAQCard from "../../components/FAQCard/FAQCard";
+import { useFaqData } from "../../helpers/faq";
+import { useTranslation } from "react-i18next";
 import figmaIcon from "../../img/image-Photoroom (10) 1.png";
 import psIcon from "../../img/image 1.png";
 import tildaIcon from "../../img/Group 11.png";
-import { useFaqData } from "../../helpers/faq";
-import { useTranslation } from "react-i18next";
+import FAQCard from "../../components/FAQCard/FAQCard";
 
 const FAQPage: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const faq = useFaqData();
   const textRef = useRef<HTMLDivElement>(null);
-  const [key, setKey] = React.useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setKey((prev) => prev + 1);
-  }, [i18n.language]);
-
-  useEffect(() => {
-    if (!textRef.current) {
-      return;
-    }
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const splitText = new SplitType(textRef.current, { types: "chars" });
-
-    gsap.fromTo(
-      splitText.chars,
-      { color: textRef.current?.dataset.bgColor },
-      {
-        color: textRef.current?.dataset.fgColor,
-        duration: 0.7,
-        stagger: 0.02,
-        scrollTrigger: {
-          trigger: textRef.current,
-          start: "top 50%",
-          end: "top 10%",
-          scrub: true,
-          markers: false,
-          toggleActions: "play play reverse reverse",
-        },
-      }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false); 
+          }
+        });
+      },
+      { threshold: 1 } 
     );
 
+    if (textRef.current) {
+      observer.observe(textRef.current);
+    }
+
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      if (textRef.current) {
+        observer.unobserve(textRef.current);
+      }
     };
-  }, [key]);
+  }, []);
 
   return (
     <div className={styles.FAQPageContainer}>
@@ -72,21 +58,21 @@ const FAQPage: React.FC = () => {
           <div
             className={styles.FAQText}
             ref={textRef}
-            key={i18n.language}
             data-bg-color="#a7a7a7"
             data-fg-color="#f45b0f"
+            style={{ color: isVisible ? "#f45b0f" : "#a7a7a7" }} // Change color based on visibility
           >
             <span className={styles.display}>
-              {t("faq.faqTitle.iSuggestGoing")}
+              {t("faq.faqTitle.iSuggestGoing")}{" "}
               <span className={styles.img}>
                 <Image src={figmaIcon} alt={""} className={styles.img} />
               </span>
-              {t("faq.faqTitle.beyound")}
+              {t("faq.faqTitle.beyound")}{" "}
             </span>
             <span className={styles.display}>
               {t("faq.faqTitle.and")}{" "}
               <Image src={psIcon} alt={""} className={styles.img} />
-              {t("faq.faqTitle.establishingYourself")}
+              {t("faq.faqTitle.establishingYourself")}{" "}
             </span>
             <span className={styles.display}>{t("faq.faqTitle.asABrand")}</span>
             <span className={styles.display}>

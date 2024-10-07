@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "vercel-build": "next build && ls -R ./public/locales"
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",

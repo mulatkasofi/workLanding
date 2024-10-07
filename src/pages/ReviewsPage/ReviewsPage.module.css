@@ -82,7 +82,9 @@
   left: 0;
   opacity: 0;
   transform: translateY(200%);
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition:
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
 }
 
 .reviewWrapper:nth-child(1) {
@@ -245,5 +247,9 @@
   .reviewWrapper:nth-child(5) {
     bottom: initial;
     right: initial;
+  }
+  .reviewsPageNumber {
+    font-size: 14px;
+    margin-top: 40px;
   }
 }

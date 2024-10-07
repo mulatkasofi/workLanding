@@ -166,5 +166,8 @@
     "onlineStore": "онлайн-магазин",
     "corporate": "корпроративный",
     "onlineSchool": "онлайн-школа"
+  },
+  "buttons":{
+    "moreButton":"еще работы"
   }
 }
