@@ -15,7 +15,6 @@ import fireIconAdaptive from "../../img/fire (1).png";
 const PreviewPage = () => {
   const { t, i18n } = useTranslation();
   const [switchState, setSwitchState] = useState(false);
-
   const handleSwitchChange = (
     newState: boolean | ((_prevState: boolean) => boolean)
   ) => {
@@ -30,7 +29,7 @@ const PreviewPage = () => {
     <div className={styles.languageBlock}>
       <button
         className={cn(styles.languageText, {
-          [styles.languageTextCLick]: i18n.language === "ru",
+          [styles.languageTextCLick]: i18n.language === "ru" ,
         })}
         onClick={() => changeLanguage("ru")}
       >
@@ -60,9 +59,7 @@ const PreviewPage = () => {
       </p>
     </div>
   );
-  if (!i18n.isInitialized) {
-    return <div></div>;
-  }
+
   return (
     <div className={styles.previewPageContainer}>
       <Image

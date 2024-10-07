@@ -15,10 +15,6 @@ const CostAndTermsPage = () => {
   const { t, i18n } = useTranslation();
   const siteTypes = useSiteTypesData();
 
-  if (!i18n.isInitialized) {
-    return <div></div>;
-  }
-
   return (
     <div className={styles.cardAndTermsContainer}>
       <div className={styles.cardAndTermsWrap}>

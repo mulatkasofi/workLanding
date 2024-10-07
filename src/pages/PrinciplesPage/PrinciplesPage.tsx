@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 const PrinciplesPage: React.FC = () => {
   const principles = usePrinciplesData();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -23,9 +23,7 @@ const PrinciplesPage: React.FC = () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
-  if (!i18n.isInitialized) {
-    return <div></div>;
-  }
+
   return (
     <div className={styles.principlesPageContainer}>
       <div className={styles.principlesPageInfoWrap}>

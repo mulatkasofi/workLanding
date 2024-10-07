@@ -14,7 +14,7 @@ const WorkPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [visibleSlides, setVisibleSlides] = useState(4);
   const [isMobileView, setIsMobileView] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const updateView = () => {
@@ -48,10 +48,7 @@ const WorkPage = () => {
   };
 
   const isNextDisabled = currentSlide >= visibleSlides - 3;
-  
-  if (!i18n.isInitialized) {
-    return <div></div>;
-  }
+
   return (
     <div className={styles.workPageContainer}>
       <div className={styles.workPageInfoContainer}>

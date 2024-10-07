@@ -54,10 +54,6 @@ const FAQPage: React.FC = () => {
     };
   }, [key]);
 
-  if (!i18n.isInitialized) {
-    return <div></div>;
-  }
-  
   return (
     <div className={styles.FAQPageContainer}>
       <div className={styles.FAQPageInfoWrap}>

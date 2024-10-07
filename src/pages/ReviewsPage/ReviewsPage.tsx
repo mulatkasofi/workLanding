@@ -13,7 +13,7 @@ import { useTranslation, Trans } from "react-i18next";
 
 const ReviewsPage = () => {
   const reviews = useReviewsData();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [visibleReviews, setVisibleReviews] = useState<boolean[]>(
     Array(reviews.length).fill(false)
   );
@@ -74,9 +74,7 @@ const ReviewsPage = () => {
       });
     };
   }, []);
-  if (!i18n.isInitialized) {
-    return <div></div>;
-  }
+ 
   return (
     <div className={styles.reviewsPageContainer}>
       <div className={styles.reviewsPageWrap}>

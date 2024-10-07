@@ -9,7 +9,7 @@ import cn from "classnames";
 
 const WorkStepsPage: React.FC = () => {
   const workSteps = useWorkStepsData();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
@@ -84,10 +84,7 @@ const WorkStepsPage: React.FC = () => {
     }
   }, [currentSlide]);
 
-  if (!i18n.isInitialized) {
-    return <div></div>;
-  }
-  
+
   return (
     <div className={styles.workStepsPageContainer}>
       <div className={styles.workStepsPageInfoWrap} onWheel={handleScroll}>
