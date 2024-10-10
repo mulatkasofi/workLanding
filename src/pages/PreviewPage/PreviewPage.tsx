@@ -5,7 +5,7 @@ import userPhoto from "../../img/viktoria.png";
 import Image from "next/image";
 import cn from "classnames";
 import fireIcon from "../../img/fire.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import roundIcon from "../../img/элипсы фон 1 экран.png";
 import Header from "../../components/Header/Header";
 import ToggleSwitch from "../../components/ToggleSwitch/ToggleSwitch";
@@ -29,7 +29,7 @@ const PreviewPage = () => {
     <div className={styles.languageBlock}>
       <button
         className={cn(styles.languageText, {
-          [styles.languageTextCLick]: i18n.language === "ru" ,
+          [styles.languageTextCLick]: i18n.language === "ru",
         })}
         onClick={() => changeLanguage("ru")}
       >

@@ -6,7 +6,7 @@
   color: #f45b0f;
 }
 .previewPageTitle {
-  font-size: 95px;
+  font-size: 5vw;
   font-weight: 550;
   text-align: center;
   margin-top: 65px;
@@ -279,7 +279,6 @@
     display: inline;
   }
 }
-
 @media (max-width: 660px) {
   .infoElements {
     display: none;
@@ -294,7 +293,6 @@
     margin-top: 15px;
     font-size: 40px;
     text-align: left;
-    max-width: 310px;
   }
   .userImageAdaptive {
     position: absolute;
@@ -321,7 +319,7 @@
   .previewPageBlock {
     display: block;
     text-align: left;
-    max-width: 325px;
+    max-width: 310px;
   }
   .previewPageSpanRight {
     margin: 0;
@@ -353,3 +351,4 @@
     max-width: 310px;
   }
 }
+
