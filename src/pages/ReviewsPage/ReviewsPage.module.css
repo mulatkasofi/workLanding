@@ -202,7 +202,8 @@
     font-size: 14px;
   }
   .reviewsPageContainer {
-    height: 1650px;
+    height: max-content;
+    padding-bottom: 50px;
   }
   .reviewsPageClientsInfo {
     display: none;
