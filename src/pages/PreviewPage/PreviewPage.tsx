@@ -102,7 +102,7 @@ const PreviewPage = () => {
               {t("preview.name")}
             </span>
           </span>
-          <div className={styles.previewPageBlock}>
+          <span className={styles.previewPageBlock}>
             <span className={styles.previewPageSpanName}>
               {t("preview.name")}
             </span>
@@ -121,7 +121,7 @@ const PreviewPage = () => {
               {t("preview.lovesPerfect")}
             </span>
 
-            <div className={styles.previewPageSpanRight}>
+            <span className={styles.previewPageSpanRight}>
               <span className={styles.andComfortable}>
                 {" "}
                 {t("preview.andComfortable")}
@@ -131,18 +131,18 @@ const PreviewPage = () => {
                   {t("preview.andComfortableAdaptive")}
                 </span>
               )}
-              <div className={styles.previewPageInfoBlock}>
-                <div className={styles.infoElements}>
+              <span className={styles.previewPageInfoBlock}>
+                <span className={styles.infoElements}>
                   {renderInfoElements()}
-                </div>
+                </span>
                 {t("preview.design")}
-                <div className={styles.infoElementsAdaptive}>
+                <span className={styles.infoElementsAdaptive}>
                   {renderInfoElements()}
-                </div>
-                <div className={styles.language}>{renderLanguageBlock()}</div>
-              </div>
-            </div>
-          </div>
+                </span>
+                <span className={styles.language}>{renderLanguageBlock()}</span>
+              </span>
+            </span>
+          </span>
         </h1>
         <ToggleSwitch
           isChecked={switchState}

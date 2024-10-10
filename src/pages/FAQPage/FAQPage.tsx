@@ -8,6 +8,7 @@ import figmaIcon from "../../img/image-Photoroom (10) 1.png";
 import psIcon from "../../img/image 1.png";
 import tildaIcon from "../../img/Group 11.png";
 import FAQCard from "../../components/FAQCard/FAQCard";
+import i18n from "../../i18n";
 
 const FAQPage: React.FC = () => {
   const { t } = useTranslation();
@@ -22,11 +23,11 @@ const FAQPage: React.FC = () => {
           if (entry.isIntersecting) {
             setIsVisible(true);
           } else {
-            setIsVisible(false); 
+            setIsVisible(false);
           }
         });
       },
-      { threshold: 1 } 
+      { threshold: 1 }
     );
 
     if (textRef.current) {
@@ -39,7 +40,7 @@ const FAQPage: React.FC = () => {
       }
     };
   }, []);
-
+  
   return (
     <div className={styles.FAQPageContainer}>
       <div className={styles.FAQPageInfoWrap}>
