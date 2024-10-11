@@ -4,6 +4,8 @@
   font-weight: 550;
   color: #313131;
   margin-top: 4px;
+  position: relative;
+  z-index: 400;
 }
 
 .headerLinkInst {
@@ -119,7 +121,7 @@
     display: flex;
     align-items: center;
     justify-content: right;
-    z-index: 100;
+    z-index: 500;
     overflow-x: hidden;
   }
   .backgroundImg {

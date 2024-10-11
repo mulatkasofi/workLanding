@@ -98,6 +98,8 @@
 .userPhoto {
   margin: 0 18px;
   transition: 1.5s ease-in-out;
+  width: 130px;
+  height: 130px;
 }
 
 .previewPageBlock {
@@ -161,7 +163,7 @@
   border: none;
   background: transparent;
   font-size: 18px;
-  color: black;
+  color: #7a7a7a;
 }
 .languageBlock {
   display: flex;
@@ -351,4 +353,3 @@
     max-width: 310px;
   }
 }
-

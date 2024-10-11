@@ -69,6 +69,9 @@
 }
 
 .siteTypeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 46px;
   height: 46px;
   border-radius: 100px;
@@ -76,8 +79,8 @@
   border: none;
   margin-right: 5px;
 }
-.siteTypeButton:hover{
-    background: #f48750;
+.siteTypeButton:hover {
+  background: #f48750;
 }
 @media (max-width: 1040px) {
   .siteTypesWrap {

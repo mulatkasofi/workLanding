@@ -18,6 +18,7 @@
 .workStepsPageNumber {
   color: #f45b0f;
   font-size: 18px;
+  margin-bottom: 5px;
 }
 
 .workStepsPageTitle {
@@ -90,7 +91,7 @@
 @media (max-width: 660px) {
   .workStepsPageInfoWrap {
     max-width: 325px;
-    padding: 100px 0 50px 0;
+    padding: 120px 0 30px 0;
   }
   .carouselContainer {
     padding-left: 0;

@@ -1,7 +1,7 @@
 'use client';
 import styles from './Footer.module.css';
 import Image from 'next/image';
-import logo from '../../img/logo.png';
+import logo from '../../assets/logo.svg';
 import ContactButton from '../../components/ContactButton/ContactButton';
 import { useState } from 'react';
 import Modal from '../../components/ModalWindow/ModalWindow';

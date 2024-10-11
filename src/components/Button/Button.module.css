@@ -37,7 +37,7 @@
 }
 
 .button:hover {
-  background: #4d4c4c;
+  background: #581d00;
 }
 
 @media (max-width: 660px) {
@@ -49,6 +49,7 @@
     height: 32px;
   }
   .buttonAction {
-  width: 32px;
-  height: 32px;}
+    width: 32px;
+    height: 32px;
+  }
 }

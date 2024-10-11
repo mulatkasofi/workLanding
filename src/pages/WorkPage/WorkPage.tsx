@@ -7,7 +7,7 @@ import arrowRight from "../../assets/arrowRight.svg";
 import Link from "next/link";
 import cn from "classnames";
 import { useImageForSliderArrowData } from "../../helpers/imageForSlider";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 const WorkPage = () => {
   const imageForSliderArrow = useImageForSliderArrowData();
@@ -57,7 +57,18 @@ const WorkPage = () => {
             <p className={styles.workPageNumber}>01</p>
             <h2 className={styles.workPageTitle}>{t("titles.latestWork")}</h2>
             <p className={styles.workPageText}>
-              {t("subtitles.latestWorkSubtitle")}
+              <Trans i18nKey="subtitles.latestWorkSubtitle">
+                I develop designs for websites of all types: landing page,
+                corporate, online-stores, etc.
+                <Link
+                  href="https://www.behance.net/aakkkiivv"
+                  className={styles.freelanceProfileLink}
+                >
+                  <span className={styles.freelanceProfileLink}>
+                    More works
+                  </span>
+                </Link>
+              </Trans>
             </p>
           </div>
           <div className={styles.sliderContainer}>

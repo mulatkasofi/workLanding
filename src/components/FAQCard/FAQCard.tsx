@@ -18,18 +18,19 @@ const FAQCard = ({ title, question, number }: FAQProps) => {
   return (
     <div
       className={cn(styles.faqContainer, { [styles.faqContainerOpen]: open })}
+      onClick={() => setOpen(!open)}
     >
       <div className={styles.faqWrap}>
         <p className={cn(styles.faqNumber, { [styles.white]: open })}>
           {number}
         </p>
         <p className={cn(styles.faqTitle, { [styles.white]: open })}>{title}</p>
-        {number !== '01' ? (
+        {number !== "01" ? (
           <button
             onClick={() => setOpen(!open)}
             className={cn(styles.faqButton, { [styles.whiteBackGround]: open })}
           >
-            <Image src={open ? arrowUp : arrowDown} alt={''} />
+            <Image src={open ? arrowUp : arrowDown} alt={""} />
           </button>
         ) : (
           <div className={styles.faqBlock}></div>

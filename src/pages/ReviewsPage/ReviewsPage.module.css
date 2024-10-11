@@ -24,7 +24,7 @@
 .reviewsPageClientsInfo {
   display: flex;
   width: 295px;
-  gap: 5px;
+  gap: 14px;
 }
 
 .reviewsPageClientsCount {
@@ -43,6 +43,7 @@
   font-size: 18px;
   color: #f45b0f;
   margin-top: 90px;
+  margin-bottom: 5px;
 }
 
 .reviewsPageText {

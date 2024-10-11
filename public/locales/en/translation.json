@@ -8,7 +8,7 @@
     "faq": "FAQ"
   },
   "subtitles": {
-    "latestWorkSubtitle": "I develop designs for websites of all types: landing page, corporate, online-stores, business sites, etc.",
+    "latestWorkSubtitle": "I develop designs for websites of all types: landing page, corporate, online-stores, business-site etc. <1>More works</1>",
     "reviewsSubtitle": "More reviews can be found on my <2>freelance profile</2>",
     "costAndTermsSubtitle": "The cost and duration of work vary depending on the request and details of the project, so for calculation you must <1>contact me</1> and discuss the project :)"
   },
@@ -78,7 +78,7 @@
   "siteTypesCard": {
     "01": {
       "title": "One page site",
-      "type": "landing , promo website, business card website",
+      "type": "landing , promo website",
       "text": "One page website on average consists of 6-8 blocks. The cost may increase/decrease depending on the number of blocks",
       "price": "200"
     },
@@ -121,7 +121,7 @@
     "lovesPerfect": "who loves perfect",
     "lovesPerfectAdaptive": "who loves perfect and comfortable",
     "andComfortable": "and comfortable",
-    "experience": "1.5 years of experience",
+    "experience": "work experience since 2022",
     "layouts": "100+ layouts developed",
     "design": "design"
   },
@@ -149,7 +149,7 @@
     },
     "04": {
       "title": "Can you develop a full-fledged website?",
-      "question": "Yes, I can develop a fully functioning website using the Tilda website creation platform. To find out the cost please contact me :)"
+      "question": "Yes, I can develop a fully functioning website using the Tilda website creation platform, or using code with a team of developers. To find out the cost please contact me :)"
     },
     "faqTitle": {
       "iSuggestGoing": "I suggest going",

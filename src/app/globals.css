@@ -1,6 +1,7 @@
 @font-face {
   font-family: "HelveticaNeueCyr";
-  src: url("/fonts/HelveticaNeueCyr.woff2") format("woff2"),
+  src:
+    url("/fonts/HelveticaNeueCyr.woff2") format("woff2"),
     url("/fonts/HelveticaNeueCyr.woff") format("woff"),
     url("/fonts/HelveticaNeueCyr.ttf") format("truetype");
   font-weight: normal;
@@ -15,6 +16,7 @@
 
 .background {
   background-image: url("../img/фон.png");
+  backdrop-filter: brightness(0.9);
 }
 
 html {
