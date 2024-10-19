@@ -55,6 +55,12 @@
   width: auto;
 }
 
+.highlightedContact {
+  color: #f45b0f;
+  font-weight: bold;
+}
+
+
 @media (max-width: 1420px) {
   .FAQPageInfoWrap {
     max-width: 1025px;

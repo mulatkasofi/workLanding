@@ -1,21 +1,25 @@
-import React, { FC, useState, useEffect } from 'react';
-import styles from './ModalWindow.module.css';
-import cross from '../../assets/cross.svg';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useTranslation } from 'next-i18next';
-import Button from '../Button/Button';
-import { ModalProps } from '../../types/components/ComponentsTypes';
+import React, { FC, useState, useEffect } from "react";
+import styles from "./ModalWindow.module.css";
+import cross from "../../assets/cross.svg";
+import Link from "next/link";
+import Image from "next/image";
+import { useTranslation } from "next-i18next";
+import Button from "../Button/Button";
+import { ModalProps } from "../../types/components/ComponentsTypes";
 
 const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
-  const [name, setName] = useState('');
-  const [link, setLink] = useState('');
+  const [name, setName] = useState("");
+  const [link, setLink] = useState("");
+  const [email, setEmail] = useState("");
   const [linkError, setLinkError] = useState(false);
+  const [emailError, setEmailError] = useState(false); 
 
   const urlPattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- ./?%&=]*)?$/i;
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
 
   const validateLink = (link: string): boolean => urlPattern.test(link);
+  const validateEmail = (email: string): boolean => emailPattern.test(email); 
 
   const sendMail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,17 +29,24 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
       return;
     }
 
+    if (!validateEmail(email)) {
+      setEmailError(true);
+      return;
+    }
+
     setLinkError(false);
+    setEmailError(false); 
 
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
+      const response = await fetch("/api/send-email", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name,
           link,
+          email,
         }),
       });
 
@@ -48,13 +59,13 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -70,35 +81,35 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
                 className={styles.cross}
                 onClick={onClose}
               />
-              <h3 className={styles.modalTitle}>{t('modal.contact')}</h3>
+              <h3 className={styles.modalTitle}>{t("modal.contact")}</h3>
               <p className={styles.modalText}>
-                {t('modal.messageOn')}{' '}
+                {t("modal.messageOn")}{" "}
                 <Link
                   href={
-                    'https://www.instagram.com/akiv.ui.ux?igsh=MTdvZmV5azlxM3BxcA=='
+                    "https://www.instagram.com/akiv.ui.ux?igsh=MTdvZmV5azlxM3BxcA=="
                   }
                   className={styles.modalLink}
                 >
                   Instagram
-                </Link>{' '}
-                {t('modal.or')}{' '}
+                </Link>{" "}
+                {t("modal.or")}{" "}
                 <Link
                   href={
-                    'https://www.linkedin.com/in/viktoriya-volozhinskaya-415145260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_apphttps://www.linkedin.com/in/viktoriya-volozhinskaya-415145260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
+                    "https://www.linkedin.com/in/viktoriya-volozhinskaya-415145260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_apphttps://www.linkedin.com/in/viktoriya-volozhinskaya-415145260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                   }
                   className={styles.modalLink}
                 >
-                  {' '}
-                  Linkedin{' '}
-                </Link>{' '}
+                  {" "}
+                  Linkedin{" "}
+                </Link>{" "}
                 <br />
-                <p className={styles.modalSpan}>{t('modal.or')}</p>
-                {t('modal.leaveALink')}
+                <p className={styles.modalSpan}>{t("modal.or")}</p>
+                {t("modal.leaveALink")}
               </p>
               <form onSubmit={sendMail} className={styles.modalForm}>
                 <input
                   name="name"
-                  placeholder={t('modal.name')}
+                  placeholder={t("modal.name")}
                   className={styles.modalInput}
                   value={name}
                   required
@@ -108,7 +119,7 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
                 />
                 <input
                   name="link"
-                  placeholder={t('modal.link')}
+                  placeholder={t("modal.link")}
                   className={styles.modalInput}
                   value={link}
                   required
@@ -116,12 +127,27 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
                     setLink(e.target.value);
                   }}
                 />
+                <input
+                  name="email"
+                  placeholder={"email"}
+                  className={styles.modalInput}
+                  value={email}
+                  required
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
                 {linkError && (
                   <p className={styles.error}>
                     Ошибка данных, попробуйте снова!
                   </p>
                 )}
-                <Button text={t('modal.send')} />
+                {emailError && (
+                  <p className={styles.error}>
+                    Неверный формат email, попробуйте снова!
+                  </p>
+                )}
+                <Button text={t("modal.send")} />
               </form>
             </div>
           </div>

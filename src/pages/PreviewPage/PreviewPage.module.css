@@ -164,6 +164,7 @@
   background: transparent;
   font-size: 18px;
   color: #7a7a7a;
+  cursor: pointer;
 }
 .languageBlock {
   display: flex;

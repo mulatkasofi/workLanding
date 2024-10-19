@@ -1,16 +1,16 @@
-import Image from 'next/image';
-import styles from './FAQCard.module.css';
-import cn from 'classnames';
-import arrowUp from '../../assets/arrowUp.svg';
-import { FAQProps } from '../../types/components/ComponentsTypes';
-import { useState, useEffect } from 'react';
-import arrowDown from '../../assets/arrowDown.svg';
+import Image from "next/image";
+import styles from "./FAQCard.module.css";
+import cn from "classnames";
+import arrowUp from "../../assets/arrowUp.svg";
+import { FAQProps } from "../../types/components/ComponentsTypes";
+import { useState, useEffect } from "react";
+import arrowDown from "../../assets/arrowDown.svg";
 
 const FAQCard = ({ title, question, number }: FAQProps) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (number === '01') {
+    if (number === "01") {
       setOpen(true);
     }
   }, [number]);
@@ -18,7 +18,7 @@ const FAQCard = ({ title, question, number }: FAQProps) => {
   return (
     <div
       className={cn(styles.faqContainer, { [styles.faqContainerOpen]: open })}
-      onClick={() => setOpen(!open)}
+      onClick={() => number !== "01" && setOpen(!open)}
     >
       <div className={styles.faqWrap}>
         <p className={cn(styles.faqNumber, { [styles.white]: open })}>

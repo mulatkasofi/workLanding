@@ -6,6 +6,7 @@
   margin-top: 4px;
   position: relative;
   z-index: 400;
+  cursor: pointer;
 }
 
 .headerLinkInst {
@@ -17,6 +18,7 @@
   right: 25px;
   bottom: 80%;
   margin-top: 4px;
+  cursor: pointer;
 }
 
 .writeMeIcon {
@@ -42,6 +44,7 @@
 }
 .burgerIcon {
   display: none;
+  cursor: pointer;
 }
 .mediaLinks {
   display: flex;
@@ -70,14 +73,14 @@
   .headerLinkInst {
     font-size: 14px;
     right: 5px;
-    bottom: 70%;
+    bottom: 60%;
   }
   .writeMe {
     width: 120px;
-    height: 65px;
+    height: 80px;
   }
   .writeMeIcon {
-    top: 0px;
+    top: -15px;
   }
   .burgerIcon {
     display: inline;
@@ -110,6 +113,7 @@
     position: relative;
     bottom: 30px;
     right: 30px;
+    cursor: pointer;
   }
   .burgerWrap {
     position: fixed;

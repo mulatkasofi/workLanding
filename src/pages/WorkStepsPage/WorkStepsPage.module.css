@@ -8,11 +8,35 @@
   bottom: 80px;
   overflow: hidden;
 }
-
+.slidesWrapper {
+  overflow: hidden;
+  width: 100%;
+  transition: padding 1s ease;
+}
+.slides {
+  display: flex;
+  gap: 10px;
+  transition: transform 1s ease;
+  width: 100%;
+}
+.sliderArrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  transition: 0.5s ease;
+}
+.sliderContainer {
+  display: flex;
+  gap: 40px;
+}
 .workStepsPageInfoWrap {
   max-width: 1290px;
   margin: 0 auto;
   padding: 170px 0 50px 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .workStepsPageNumber {
@@ -43,6 +67,18 @@
   flex: 0 0 25%;
 }
 
+.moreWorkButton {
+  display: none;
+  width: 325px;
+  background: #f45b0f;
+  border: none;
+  border-radius: 100px;
+  font-size: 14px;
+  color: #ffffff;
+  height: 45px;
+  margin-top: 30px;
+}
+
 .animating {
   animation: returnToStart 2s ease-in-out forwards;
 }
@@ -71,6 +107,9 @@
   .paddingLeft {
     padding-left: 200px;
   }
+  .slides {
+    width: 130%;
+  }
 }
 
 @media (max-width: 1040px) {
@@ -85,6 +124,14 @@
   }
   .workStepsPageTitle {
     font-size: 40px;
+  }
+  .slides {
+    width: 180%;
+  }
+}
+@media (max-width: 815px) {
+  .slides {
+    width: 245%;
   }
 }
 
@@ -121,5 +168,14 @@
   }
   .workStepsPageNumber {
     font-size: 14px;
+  }
+  .slides {
+    max-width: 325px;
+    margin: 0 auto 120px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .sliderContainer {
+    display: none;
   }
 }

@@ -10,7 +10,7 @@
 
 .workPageInfoContainer {
   width: 100%;
-  padding: 90px 0 60px 0;
+  padding: 90px 0 60px;
 }
 
 .workPageInfoWrap {
@@ -20,6 +20,7 @@
   max-width: 1280px;
   margin: 0 auto;
 }
+
 .workPageTitle {
   font-size: 60px;
   font-style: italic;
@@ -36,6 +37,7 @@
 .freelanceProfileLink {
   color: #f45b0f;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .workPageText {
@@ -50,11 +52,6 @@
   align-items: center;
   justify-content: flex-end;
   gap: 40px;
-}
-
-.route {
-  transition: 0.5s ease;
-  transform: scale(-1, 1);
 }
 
 .sliderArrow {
@@ -75,7 +72,7 @@
 .slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 320%;
+  width: 220%;
 }
 
 .slide {
@@ -121,6 +118,7 @@
   font-size: 18px;
   color: white;
 }
+
 .moreWorkButton {
   display: none;
   width: 325px;
@@ -131,6 +129,12 @@
   color: #ffffff;
   height: 45px;
   margin-top: 30px;
+}
+
+@media (max-width: 1580px) {
+  .slides {
+    width: 260%;
+  }
 }
 
 @media (max-width: 1420px) {
@@ -144,14 +148,16 @@
     padding-left: 150px;
   }
   .slides {
-    width: 400%;
+    width: 330%;
   }
 }
+
 @media (max-width: 1185px) {
   .slides {
-    width: 480%;
+    width: 390%;
   }
 }
+
 @media (max-width: 1040px) {
   .workPageInfoWrap {
     max-width: 645px;
@@ -170,17 +176,19 @@
     width: 40px;
   }
   .slides {
-    width: 350%;
+    width: 285%;
   }
 }
+
 @media (max-width: 825px) {
   .slides {
-    width: 440%;
+    width: 360%;
   }
 }
+
 @media (max-width: 700px) {
   .slides {
-    width: 480%;
+    width: 400%;
   }
 }
 
@@ -190,6 +198,7 @@
   }
   .workPageContainer {
     background-size: cover;
+    border-radius: 30px;
   }
   .img {
     width: 320px;
@@ -224,9 +233,9 @@
     font-size: 14px;
   }
   .workPageInfoContainer {
-    padding: 40px 0 30px 0;
+    padding: 40px 0 30px;
   }
   .slidesWrapper {
-    padding-bottom: 30px;
+    padding-bottom: 60px;
   }
 }

@@ -25,6 +25,7 @@
   border-radius: 5px;
   background: #f45b0f;
   border: none;
+  cursor: pointer;
 }
 
 .faqNumber {

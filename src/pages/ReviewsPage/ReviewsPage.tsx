@@ -7,13 +7,15 @@ import cn from "classnames";
 import clipOrangeIcon from "../../assets/clipOrangeIcon.svg";
 import clipWhiteIcon from "../../assets/clipWhiteIcon.svg";
 import { useReviewsData } from "../../helpers/reviews";
-import clientIcon from "../../img/иконки.png";
+import clientIcon from "../../assets/clients.svg";
 import Reviews from "../../components/Reviews/Reviews";
 import { useTranslation, Trans } from "react-i18next";
+import { useRouter } from "next/navigation";
 
 const ReviewsPage = () => {
   const reviews = useReviewsData();
   const { t } = useTranslation();
+  const router = useRouter();
   const [visibleReviews, setVisibleReviews] = useState<boolean[]>(
     Array(reviews.length).fill(false)
   );
@@ -57,7 +59,6 @@ const ReviewsPage = () => {
         }
       });
     };
-
     const observer = new IntersectionObserver(handleIntersect, options);
 
     currentRefs.forEach((ref) => {
@@ -74,7 +75,9 @@ const ReviewsPage = () => {
       });
     };
   }, []);
- 
+  const handleMoreButtonClick = () => {
+    router.push("https://www.behance.net/aakkkiivv");
+  };
   return (
     <div className={styles.reviewsPageContainer}>
       <div className={styles.reviewsPageWrap}>
@@ -133,6 +136,12 @@ const ReviewsPage = () => {
               </div>
             </div>
           ))}
+          <button
+            className={styles.moreWorkButton}
+            onClick={handleMoreButtonClick}
+          >
+            + {t("buttons.moreReviews")}
+          </button>
         </div>
       </div>
     </div>

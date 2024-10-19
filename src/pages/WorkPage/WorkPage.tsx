@@ -4,10 +4,14 @@ import styles from "./WorkPage.module.css";
 import Image from "next/image";
 import arrowLeft from "../../assets/arrowLeft.svg";
 import arrowRight from "../../assets/arrowRight.svg";
+import arrowLeftOrange from "../../assets/arrowSliderLeftOrange.svg";
+import arrowRightFlipped from "../../assets/arrowRightFlipped.svg";
 import Link from "next/link";
 import cn from "classnames";
 import { useImageForSliderArrowData } from "../../helpers/imageForSlider";
 import { Trans, useTranslation } from "react-i18next";
+import { useRouter } from "next/navigation";
+
 
 const WorkPage = () => {
   const imageForSliderArrow = useImageForSliderArrowData();
@@ -15,12 +19,13 @@ const WorkPage = () => {
   const [visibleSlides, setVisibleSlides] = useState(4);
   const [isMobileView, setIsMobileView] = useState(false);
   const { t } = useTranslation();
+  const router = useRouter();
 
   useEffect(() => {
     const updateView = () => {
       if (window.innerWidth <= 660) {
         setIsMobileView(true);
-        setVisibleSlides((prev) => Math.min(prev, imageForSliderArrow.length)); // Убедитесь, что не превышаем количество слайдов
+        setVisibleSlides((prev) => Math.min(prev, imageForSliderArrow.length));
       } else {
         setIsMobileView(false);
         setVisibleSlides(imageForSliderArrow.length);
@@ -44,7 +49,11 @@ const WorkPage = () => {
   };
 
   const loadMoreSlides = () => {
-    setVisibleSlides((prev) => Math.min(prev + 2, imageForSliderArrow.length)); // Убедитесь, что не превышаем количество слайдов
+    setVisibleSlides((prev) => Math.min(prev + 2, imageForSliderArrow.length));
+  };
+
+  const handleMoreButtonClick = () => {
+    router.push("https://www.behance.net/aakkkiivv");
   };
 
   const isNextDisabled = currentSlide >= visibleSlides - 1;
@@ -77,14 +86,20 @@ const WorkPage = () => {
               onClick={handlePrev}
               disabled={currentSlide === 0}
             >
-              <Image src={arrowLeft} alt="Previous" />
+              <Image
+                src={currentSlide === 0 ? arrowLeft : arrowLeftOrange}
+                alt="Previous"
+              />
             </button>
             <button
               className={styles.sliderArrow}
               onClick={handleNext}
               disabled={isNextDisabled}
             >
-              <Image src={arrowRight} alt="Next" />
+              <Image
+                src={isNextDisabled ? arrowRightFlipped : arrowRight}
+                alt="Next"
+              />
             </button>
           </div>
         </div>
@@ -116,8 +131,15 @@ const WorkPage = () => {
               </Link>
             </div>
           ))}
-          {isMobileView && visibleSlides < imageForSliderArrow.length && (
-            <button className={styles.moreWorkButton} onClick={loadMoreSlides}>
+          {isMobileView && (
+            <button
+              className={styles.moreWorkButton}
+              onClick={
+                visibleSlides >= imageForSliderArrow.length
+                  ? handleMoreButtonClick
+                  : loadMoreSlides
+              }
+            >
               + {t("buttons.moreButton")}
             </button>
           )}

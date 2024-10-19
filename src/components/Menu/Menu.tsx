@@ -5,11 +5,21 @@ import arrowIcon from "../../assets/arrowIcon.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-const Menu = () => {
+interface MenuProps {
+  closeMenu?: () => void; // Add a callback prop for closing the menu
+}
+
+const Menu: React.FC<MenuProps> = ({ closeMenu }) => {
   const { t } = useTranslation();
 
   const renderMenuItem = (text: string, link: string) => (
-    <Link href={link} scroll={true} passHref style={{ textDecoration: "none" }}>
+    <Link
+      href={link}
+      scroll={true}
+      passHref
+      style={{ textDecoration: "none", cursor: "pointer" }}
+      onClick={closeMenu} // Close the menu when a link is clicked
+    >
       <div className={styles.menuItemWrap}>
         <p className={styles.menuItemText}>{text}</p>
         <Image src={arrowIcon} alt={""} />

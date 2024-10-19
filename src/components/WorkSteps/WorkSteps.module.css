@@ -1,6 +1,7 @@
 .whiteBlock {
   border: 1px solid transparent;
-  background: linear-gradient(#ffffff33, #fffefe 0) padding-box,
+  background:
+    linear-gradient(#ffffff33, #fffefe 0) padding-box,
     linear-gradient(180deg, #f45b0f 0%, #dadada 100%) border-box;
   min-width: 315px;
   max-width: 315px;
@@ -13,7 +14,9 @@
   margin-top: 20px;
   background: #f45b0f;
 }
-
+.questionsBlock {
+  background: #f45b0f;
+}
 .blackBlock {
   margin-top: 20px;
   background: #0c0c0c;
@@ -86,7 +89,8 @@
   .workStepsWrap {
     max-width: 220px;
   }
-  .blackBlock,.orangeBlock{
+  .blackBlock,
+  .orangeBlock {
     margin: 0;
   }
 }

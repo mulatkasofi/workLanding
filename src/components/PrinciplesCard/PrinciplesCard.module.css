@@ -33,6 +33,7 @@
   align-self: flex-start;
   color: #f45b0f;
   font-size: 18px;
+  font-weight: 400;
 }
 
 @media (max-width: 660px) {

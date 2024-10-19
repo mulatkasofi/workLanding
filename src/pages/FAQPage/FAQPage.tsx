@@ -3,19 +3,23 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./FAQPage.module.css";
 import Image from "next/image";
 import { useFaqData } from "../../helpers/faq";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import figmaIcon from "../../img/image-Photoroom (10) 1.png";
 import psIcon from "../../img/image 1.png";
 import tildaIcon from "../../img/Group 11.png";
 import FAQCard from "../../components/FAQCard/FAQCard";
-import i18n from "../../i18n";
+import Modal from "../../components/ModalWindow/ModalWindow";
 
 const FAQPage: React.FC = () => {
   const { t } = useTranslation();
-  const faq = useFaqData();
+  const [open, setOpen] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const handleClick = () => {
+    setOpen(!open);
+  };
 
+  const faq = useFaqData({ onClick: handleClick });
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -40,13 +44,12 @@ const FAQPage: React.FC = () => {
       }
     };
   }, []);
-  
+
   return (
     <div className={styles.FAQPageContainer}>
       <div className={styles.FAQPageInfoWrap}>
         <p className={styles.FAQPageNumber}>06</p>
         <h2 className={styles.FAQPageTitle}>{t("titles.faq")}</h2>
-
         {faq.map((i) => (
           <FAQCard
             key={i.number}
@@ -61,7 +64,7 @@ const FAQPage: React.FC = () => {
             ref={textRef}
             data-bg-color="#a7a7a7"
             data-fg-color="#f45b0f"
-            style={{ color: isVisible ? "#f45b0f" : "#a7a7a7" }} // Change color based on visibility
+            style={{ color: isVisible ? "#f45b0f" : "#a7a7a7" }}
           >
             <span className={styles.display}>
               {t("faq.faqTitle.iSuggestGoing")}{" "}
@@ -84,6 +87,7 @@ const FAQPage: React.FC = () => {
           </div>
         </div>
       </div>
+      {open && <Modal isOpen={open} onClose={() => setOpen(!open)} />}
     </div>
   );
 };

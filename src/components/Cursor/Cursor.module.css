@@ -12,13 +12,12 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  border: 2px solid #f45b0f; 
+  border: 2px solid #f45b0f;
   border-radius: 50%;
   top: -8px;
   left: -8px;
   transition: border-color 0.2s ease;
 }
-
 
 @keyframes cursorAnim {
   0% {
@@ -35,4 +34,10 @@
 
 .expand {
   animation: cursorAnim 0.5s forwards;
+}
+
+@media (max-width: 660px) {
+  .cursor {
+    display: none;
+  }
 }

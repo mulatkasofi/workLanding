@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Menu from "../Menu/Menu";
 import logoIcon from "../../assets/logo.svg";
-import writeMeIcon from "../../img/writeMe.png";
-import writeMeIconRu from "../../img/Group 1794.png";
+import writeMeIcon from "../../assets/writeMeIcon.svg";
+import writeMeIconRu from "../../assets/writeMeIconRu.svg";
 import styles from "./Header.module.css";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
@@ -19,6 +19,11 @@ const Header = () => {
   const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const closeMenu = () => {
+    setOpen(false); 
+  };
+
   const renderLinks = () => (
     <>
       <div className={styles.writeMeIcon}>
@@ -47,6 +52,7 @@ const Header = () => {
       </Link>
     </>
   );
+
   return (
     <div className={styles.headerWrap}>
       <div className={styles.menuWrap}>
@@ -70,7 +76,7 @@ const Header = () => {
               <div className={styles.mediaLinks}>{renderLinks()}</div>
             </div>
             <div className={styles.menuAdaptiveWrap}>
-              <Menu />
+              <Menu closeMenu={closeMenu} />
             </div>
             <div className={styles.contactButtonWrapper}>
               <ContactButton onClick={() => setIsOpenModal(!isOpenModal)} />

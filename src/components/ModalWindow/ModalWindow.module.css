@@ -79,6 +79,7 @@
   color: #f45b0f;
   text-decoration: underline;
   font-size: 18px;
+  cursor: pointer;
 }
 
 .modalSpan {

@@ -16,7 +16,7 @@ export interface SiteTypesProps {
 
 export interface FAQProps {
   title: string;
-  question: string;
+  question: string | React.JSX.Element;
   number: string;
 }
 export interface ButtonProps {

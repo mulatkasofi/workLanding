@@ -1,103 +1,94 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./WorkStepsPage.module.css";
+import arrowLeft from "../../assets/arrowLeft.svg";
+import arrowRight from "../../assets/arrowRight.svg";
 import WorkSteps from "../../components/WorkSteps/WorkSteps";
+import Modal from "../../components/ModalWindow/ModalWindow";
+import Image from "next/image";
+import arrowLeftOrange from "../../assets/arrowSliderLeftOrange.svg";
+import arrowRightFlipped from "../../assets/arrowRightFlipped.svg"; 
 import { useWorkStepsData } from "../../helpers/workSteps";
 import { useTranslation } from "react-i18next";
-import Modal from "../../components/ModalWindow/ModalWindow";
 import cn from "classnames";
 
 const WorkStepsPage: React.FC = () => {
   const workSteps = useWorkStepsData();
   const { t } = useTranslation();
-  const [open, setOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isScrolling, setIsScrolling] = useState(false);
-  const carouselRef = useRef<HTMLDivElement | null>(null);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const [containerWidth, setContainerWidth] = useState<number>(0);
-  const [slideWidth, setSlideWidth] = useState<number>(0);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [visibleSlides, setVisibleSlides] = useState(3);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const updateDimensions = () => {
-      if (carouselRef.current) {
-        setContainerWidth(carouselRef.current.offsetWidth);
-        const visibleSlides = Math.floor(carouselRef.current.offsetWidth / 300);
-        setSlideWidth(carouselRef.current.offsetWidth / visibleSlides);
-      }
-
+    const updateView = () => {
       if (window.innerWidth <= 660) {
-        setIsMobile(true);
-        document.body.style.overflowY = "auto";
+        setVisibleSlides(1);
       } else {
-        setIsMobile(false);
+        setVisibleSlides(3);
       }
     };
 
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
+    updateView();
+    window.addEventListener("resize", updateView);
 
     return () => {
-      window.removeEventListener("resize", updateDimensions);
+      window.removeEventListener("resize", updateView);
     };
   }, []);
 
-  const handleScroll = (event: React.WheelEvent<HTMLDivElement>) => {
-    if (isMobile) {
-      return;
-    }
-
-    if (isScrolling) {
-      return;
-    }
-
-    const maxSlides =
-      workSteps.length - Math.floor(containerWidth / slideWidth);
-    if (event.deltaY > 0) {
-      if (currentSlide < maxSlides) {
-        setCurrentSlide((prev) => prev + 1);
-        document.body.style.overflowY = "hidden";
-      } else {
-        document.body.style.overflowY = "auto";
-      }
-    } else if (event.deltaY < 0) {
-      if (currentSlide > 0) {
-        setCurrentSlide((prev) => prev - 1);
-        document.body.style.overflowY = "hidden";
-      } else {
-        document.body.style.overflowY = "auto";
-      }
-    }
-
-    setIsScrolling(true);
-    if (scrollTimeoutRef.current) {
-      clearTimeout(scrollTimeoutRef.current);
-    }
-    scrollTimeoutRef.current = setTimeout(() => setIsScrolling(false), 500);
+  const handleNext = () => {
+    setCurrentSlide((prev) =>
+      Math.min(prev + 1, workSteps.length - visibleSlides)
+    );
   };
 
-  useEffect(() => {
-    if (carouselRef.current) {
-      const totalTranslate = currentSlide * 400;
-      carouselRef.current.style.transform = `translateX(-${totalTranslate}px)`;
-    }
-  }, [currentSlide]);
+  const handlePrev = () => {
+    setCurrentSlide((prev) => Math.max(prev - 1, 0));
+  };
 
+  const isNextDisabled = currentSlide >= workSteps.length - visibleSlides;
 
   return (
     <div className={styles.workStepsPageContainer}>
-      <div className={styles.workStepsPageInfoWrap} onWheel={handleScroll}>
-        <p className={styles.workStepsPageNumber}>02</p>
-        <h2 className={styles.workStepsPageTitle}>{t("titles.workSteps")}</h2>
+      <div className={styles.workStepsPageInfoWrap}>
+        <div>
+          <p className={styles.workStepsPageNumber}>02</p>
+          <h2 className={styles.workStepsPageTitle}>{t("titles.workSteps")}</h2>
+        </div>
+        <div className={styles.sliderContainer}>
+          <button
+            className={styles.sliderArrow}
+            onClick={handlePrev}
+            disabled={currentSlide === 0}
+          >
+            <Image
+              src={currentSlide === 0 ? arrowLeft : arrowLeftOrange}
+              alt="Previous"
+            />
+          </button>
+          <button
+            className={styles.sliderArrow}
+            onClick={handleNext}
+            disabled={isNextDisabled}
+          >
+            <Image
+              src={isNextDisabled ? arrowRightFlipped : arrowRight}
+              alt="Next"
+            />
+          </button>
+        </div>
       </div>
       <div
-        className={cn(styles.carouselContainer, {
+        className={cn(styles.slidesWrapper, {
           [styles.paddingLeft]: currentSlide === 0,
         })}
-        onWheel={handleScroll}
       >
-        <div className={styles.carousel} ref={carouselRef}>
+        <div
+          className={styles.slides}
+          style={{
+            transform: `translateX(-${currentSlide * 25}%)`,
+          }}
+        >
           {workSteps.map((item, index) => (
             <div className={styles.workStepsElements} key={item.number}>
               <WorkSteps

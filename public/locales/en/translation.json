@@ -137,7 +137,7 @@
   "faq": {
     "01": {
       "title": "What determine the timing and cost?",
-      "question": "The timing and cost depend on the volume and complexity of the work. For example, if this is a one-page site with 6-8 template screens, then the time frame and cost will be small. If it is a multi-page site with a unique design and non-standard solutions, then the cost will be much higher. You can always contact me and we will discuss everything in detail :)"
+      "question": "The timing and cost depend on the volume and complexity of the work. For example, if this is a one-page site with 6-8 template screens, then the time frame and cost will be small. If it is a multi-page site with a unique design and non-standard solutions, then the cost will be much higher. You can always <2>contact me</2> and we will discuss everything in detail :)"
     },
     "02": {
       "title": "How can I pay?",
@@ -149,7 +149,7 @@
     },
     "04": {
       "title": "Can you develop a full-fledged website?",
-      "question": "Yes, I can develop a fully functioning website using the Tilda website creation platform, or using code with a team of developers. To find out the cost please contact me :)"
+      "question": "Yes, I can develop a fully functioning website using the Tilda website creation platform, or using code with a team of developers. To find out the cost please <2>contact me<2> :)"
     },
     "faqTitle": {
       "iSuggestGoing": "I suggest going",
@@ -168,6 +168,7 @@
     "onlineSchool": "online-school"
   },
   "buttons": {
-    "moreButton": "more works"
+    "moreButton": "more works",
+    "moreReviews": "more reviews"
   }
 }

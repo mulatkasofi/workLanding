@@ -1,12 +1,12 @@
-import Image from 'next/image';
-import cn from 'classnames';
-import styles from './WorkSteps.module.css';
-import legWhiteIcon from '../../assets/legWhiteIcon.svg';
-import legOrangeIcon from '../../assets/legOrangeIcon.svg';
-import questionIcon from '../../assets/questionIcon.svg';
-import Button from '../Button/Button';
-import { useTranslation } from 'react-i18next';
-import { WorkStepsProps } from '../../types/components/ComponentsTypes';
+import Image from "next/image";
+import cn from "classnames";
+import styles from "./WorkSteps.module.css";
+import legWhiteIcon from "../../assets/legWhiteIcon.svg";
+import legOrangeIcon from "../../assets/legOrangeIcon.svg";
+import questionIcon from "../../assets/questionIcon.svg";
+import Button from "../Button/Button";
+import { useTranslation } from "react-i18next";
+import { WorkStepsProps } from "../../types/components/ComponentsTypes";
 
 const WorkSteps = ({
   title,
@@ -22,32 +22,33 @@ const WorkSteps = ({
       <div
         className={cn(
           styles.whiteBlock,
-          { [styles.orangeBlock]: type === 'orange' || type === 'question' },
-          { [styles.blackBlock]: type === 'black' },
+          { [styles.orangeBlock]: type === "orange" },
+          { [styles.blackBlock]: type === "black" },
+          { [styles.questionsBlock]: type === "question" }
         )}
       >
         <div className={styles.workStepsWrap}>
           <div className={styles.workStepsCardHeader}>
             <Image
               src={
-                type === 'question'
+                type === "question"
                   ? questionIcon
-                  : type === 'white'
+                  : type === "white"
                     ? legOrangeIcon
                     : legWhiteIcon
               }
-              alt={''}
+              alt={""}
             />
-            {type !== 'question' ? (
+            {type !== "question" ? (
               <p
                 className={cn(styles.whiteBlockNumber, {
-                  [styles.numberBlock]: type === 'orange' || type === 'black',
+                  [styles.numberBlock]: type === "orange" || type === "black",
                 })}
               >
                 {number}
               </p>
             ) : (
-              <Image src={number} alt={''} />
+              <Image src={number} alt={""} />
             )}
           </div>
           <div>
@@ -55,9 +56,9 @@ const WorkSteps = ({
               className={cn(
                 styles.whiteBlockTitle,
                 {
-                  [styles.titleBlock]: type === 'orange' || type === 'black',
+                  [styles.titleBlock]: type === "orange" || type === "black",
                 },
-                { [styles.questionBlock]: type === 'question' },
+                { [styles.questionBlock]: type === "question" }
               )}
             >
               {title}
@@ -65,15 +66,15 @@ const WorkSteps = ({
             <p
               className={cn(styles.whiteBlockText, {
                 [styles.textBlock]:
-                  type === 'orange' || type === 'black' || type === 'question',
+                  type === "orange" || type === "black" || type === "question",
               })}
             >
               {text}
             </p>
-            {type === 'question' && (
+            {type === "question" && (
               <Button
                 onClick={() => setOpen(!open)}
-                text={t('modal.contactButton')}
+                text={t("modal.contactButton")}
               />
             )}
           </div>
