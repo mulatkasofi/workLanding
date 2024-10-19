@@ -12,10 +12,12 @@ const Footer = () => {
       <div className={styles.footerWrap}>
         <ContactButton onClick={() => setOpen(!open)} />
         {open && <Modal isOpen={open} onClose={() => setOpen(!open)} />}
-        <Image src={logo} alt={''} className={styles.footerLogo} />
-        <p className={styles.footerTitle}>
-          © 2024 VOLOZHINSKAYA - All rights are reserved
-        </p>
+        <div className={styles.footerName}>
+          <Image src={logo} alt={""} className={styles.footerLogo} />
+          <p className={styles.footerTitle}>
+            © 2024 VOLOZHINSKAYA - All rights are reserved
+          </p>
+        </div>
       </div>
     </div>
   );
