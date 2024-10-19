@@ -49,3 +49,7 @@ export interface WorkStepsProps {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+export interface MenuProps {
+  closeMenu?: () => void;
+}

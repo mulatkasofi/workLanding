@@ -216,6 +216,7 @@
   }
   .workPageText {
     margin-left: 100px;
+    font-size: 14px;
   }
   .sliderContainer {
     display: none;

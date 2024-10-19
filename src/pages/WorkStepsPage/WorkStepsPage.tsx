@@ -7,7 +7,7 @@ import WorkSteps from "../../components/WorkSteps/WorkSteps";
 import Modal from "../../components/ModalWindow/ModalWindow";
 import Image from "next/image";
 import arrowLeftOrange from "../../assets/arrowSliderLeftOrange.svg";
-import arrowRightFlipped from "../../assets/arrowRightFlipped.svg"; 
+import arrowRightFlipped from "../../assets/arrowRightFlipped.svg";
 import { useWorkStepsData } from "../../helpers/workSteps";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
