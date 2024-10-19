@@ -72,14 +72,23 @@
   }
   .headerLinkInst {
     font-size: 14px;
-    right: 5px;
-    bottom: 60%;
+    right: 7px;
+    bottom: 70%;
   }
-  .writeMe {
-    width: 120px;
+  .writeMeRu {
+    width: 140px;
     height: 80px;
+    position: relative;
+    top: -5px;
   }
-  .writeMeIcon {
+  .writeMeEn {
+    width: 140px;
+    height: 80px;
+    position: relative;
+    top: -5px;
+    right: -5px;
+  }
+  .writeMeIconEn {
     top: -15px;
   }
   .burgerIcon {
@@ -112,7 +121,7 @@
     text-align: right;
     position: relative;
     bottom: 30px;
-    right: 30px;
+    right: 10px;
     cursor: pointer;
   }
   .burgerWrap {

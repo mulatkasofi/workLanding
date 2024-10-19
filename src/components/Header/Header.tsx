@@ -28,9 +28,9 @@ const Header = () => {
     <>
       <div className={styles.writeMeIcon}>
         {i18n.language === "ru" ? (
-          <Image src={writeMeIconRu} alt={""} className={styles.writeMe} />
+          <Image src={writeMeIconRu} alt={""} className={styles.writeMeRu} />
         ) : (
-          <Image src={writeMeIcon} alt={""} className={styles.writeMe} />
+          <Image src={writeMeIcon} alt={""} className={styles.writeMeEn} />
         )}
 
         <Link
