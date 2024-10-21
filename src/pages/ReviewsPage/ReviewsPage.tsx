@@ -102,7 +102,7 @@ const ReviewsPage = () => {
           <div className={styles.reviewsPageClientsInfo}>
             <Image src={clientIcon} alt={""} />
             <div>
-              <h3 className={styles.reviewsPageClientsCount}>80+</h3>
+              <h3 className={styles.reviewsPageClientsCount}>100+</h3>
               <p className={styles.reviewsPageCLientsText}>
                 {t("reviewsCard.happyClients")}
               </p>

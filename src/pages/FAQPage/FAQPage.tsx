@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./FAQPage.module.css";
 import Image from "next/image";
 import { useFaqData } from "../../helpers/faq";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import figmaIcon from "../../img/image-Photoroom (10) 1.png";
 import psIcon from "../../img/image 1.png";
 import tildaIcon from "../../img/Group 11.png";
