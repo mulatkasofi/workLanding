@@ -76,7 +76,7 @@ const ReviewsPage = () => {
     };
   }, []);
   const handleMoreButtonClick = () => {
-    router.push("https://www.behance.net/aakkkiivv");
+    router.push("https://kwork.ru/user/aakkkiivv");
   };
   return (
     <div className={styles.reviewsPageContainer}>

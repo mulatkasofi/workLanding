@@ -12,6 +12,13 @@
   z-index: 300;
 }
 
+.successMessage{
+  width: 170px;
+  margin:0 auto;
+  font-weight: 400;
+  font-size: 30px;
+}
+
 .modal {
   display: flex;
   position: fixed;

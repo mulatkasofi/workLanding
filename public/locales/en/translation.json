@@ -107,7 +107,10 @@
     "send": "send",
     "name": "name",
     "link": "link to social network or messenger",
-    "contactButton": "contact"
+    "contactButton": "contact",
+    "successMessage":"Sent! I will contact you shortly",
+    "errorEmail":"Invalid email format, try again!",
+    "error":"Data error, try again!"
   },
   "toggleSwitch": {
     "spark": "spark",

@@ -7,6 +7,7 @@ import sixImg from '../img/workIcons/workImg6.png';
 import sevenImg from '../img/workIcons/workImg7.png';
 import eightIng from '../img/workIcons/workImg8.png';
 import nineImg from '../img/workIcons/workImg9.png'
+import tenImg from '../img/workIcons/workIng10.png'
 import { useTranslation } from 'react-i18next';
 
 export const useImageForSliderArrowData = () => {
@@ -19,7 +20,7 @@ export const useImageForSliderArrowData = () => {
       title: t("latestWorkSlide.landingPage"),
     },
     {
-      link: "https://www.behance.net/gallery/165504921/COMMERCIAL-PROJEKT-FOR-CONVERSE-LANDING-PAGE",
+      link: "https://www.behance.net/gallery/205176055/Marketing-agency-landing-page",
       img: eightIng,
       title: t("latestWorkSlide.landingPage"),
     },
@@ -27,6 +28,11 @@ export const useImageForSliderArrowData = () => {
       link: "https://www.behance.net/gallery/193340783/interner-magazin-vinilovyh-plastinok",
       img: firstImg,
       title: t("latestWorkSlide.onlineStore"),
+    },
+    {
+      link: "https://www.behance.net/gallery/210213219/design-for-website-landing-page",
+      img: tenImg,
+      title: t("latestWorkSlide.landingPage"),
     },
     {
       link: "https://www.behance.net/gallery/179360543/sajt-dlja-stomatologii",

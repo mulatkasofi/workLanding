@@ -13,13 +13,14 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
   const [link, setLink] = useState("");
   const [email, setEmail] = useState("");
   const [linkError, setLinkError] = useState(false);
-  const [emailError, setEmailError] = useState(false); 
+  const [emailError, setEmailError] = useState(false);
+  const [isSent, setIsSent] = useState(false); // Добавлено состояние для отслеживания успешной отправки
 
   const urlPattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- ./?%&=]*)?$/i;
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const validateLink = (link: string): boolean => urlPattern.test(link);
-  const validateEmail = (email: string): boolean => emailPattern.test(email); 
+  const validateEmail = (email: string): boolean => emailPattern.test(email);
 
   const sendMail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
     }
 
     setLinkError(false);
-    setEmailError(false); 
+    setEmailError(false);
 
     try {
       const response = await fetch("/api/send-email", {
@@ -50,16 +51,25 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
         }),
       });
 
+      if (response.ok) {
+        setIsSent(true);
+        setName("");
+        setLink("");
+        setEmail("");
+      } else {
+        setIsSent(false);
+      }
+
       await response.json();
-      onClose();
     } catch (error) {
-      /* eslint-disable no-empty */
+      setIsSent(false);
     }
   };
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      setIsSent(false);
     } else {
       document.body.style.overflow = "";
     }
@@ -77,78 +87,75 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
             <div className={styles.modalContent}>
               <Image
                 src={cross}
-                alt="image"
+                alt="close"
                 className={styles.cross}
                 onClick={onClose}
               />
-              <h3 className={styles.modalTitle}>{t("modal.contact")}</h3>
-              <p className={styles.modalText}>
-                {t("modal.messageOn")}{" "}
-                <Link
-                  href={
-                    "https://www.instagram.com/akiv.ui.ux?igsh=MTdvZmV5azlxM3BxcA=="
-                  }
-                  className={styles.modalLink}
-                >
-                  Instagram
-                </Link>{" "}
-                {t("modal.or")}{" "}
-                <Link
-                  href={
-                    "https://www.linkedin.com/in/viktoriya-volozhinskaya-415145260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_apphttps://www.linkedin.com/in/viktoriya-volozhinskaya-415145260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                  }
-                  className={styles.modalLink}
-                >
-                  {" "}
-                  Linkedin{" "}
-                </Link>{" "}
-                <br />
-                <p className={styles.modalSpan}>{t("modal.or")}</p>
-                {t("modal.leaveALink")}
-              </p>
-              <form onSubmit={sendMail} className={styles.modalForm}>
-                <input
-                  name="name"
-                  placeholder={t("modal.name")}
-                  className={styles.modalInput}
-                  value={name}
-                  required
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
-                />
-                <input
-                  name="link"
-                  placeholder={t("modal.link")}
-                  className={styles.modalInput}
-                  value={link}
-                  required
-                  onChange={(e) => {
-                    setLink(e.target.value);
-                  }}
-                />
-                <input
-                  name="email"
-                  placeholder={"email"}
-                  className={styles.modalInput}
-                  value={email}
-                  required
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
-                {linkError && (
-                  <p className={styles.error}>
-                    Ошибка данных, попробуйте снова!
+              {isSent ? (
+                <p className={styles.successMessage}>
+                  {t("modal.successMessage")}
+                </p>
+              ) : (
+                <>
+                  <h3 className={styles.modalTitle}>{t("modal.contact")}</h3>
+                  <p className={styles.modalText}>
+                    {t("modal.messageOn")}{" "}
+                    <Link
+                      href="https://www.instagram.com/akiv.ui.ux?igsh=MTdvZmV5azlxM3BxcA=="
+                      className={styles.modalLink}
+                    >
+                      Instagram
+                    </Link>{" "}
+                    {t("modal.or")}{" "}
+                    <Link
+                      href="https://www.linkedin.com/in/viktoriya-volozhinskaya-415145260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_apphttps://www.linkedin.com/in/viktoriya-volozhinskaya-415145260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                      className={styles.modalLink}
+                    >
+                      Linkedin
+                    </Link>{" "}
+                    <br />
+                    <span className={styles.modalSpan}>{t("modal.or")}</span>
+                    {t("modal.leaveALink")}
                   </p>
-                )}
-                {emailError && (
-                  <p className={styles.error}>
-                    Неверный формат email, попробуйте снова!
-                  </p>
-                )}
-                <Button text={t("modal.send")} />
-              </form>
+                  <form onSubmit={sendMail} className={styles.modalForm}>
+                    <input
+                      name="name"
+                      placeholder={t("modal.name")}
+                      className={styles.modalInput}
+                      value={name}
+                      required
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                    <input
+                      name="link"
+                      placeholder={t("modal.link")}
+                      className={styles.modalInput}
+                      value={link}
+                      required
+                      onChange={(e) => setLink(e.target.value)}
+                    />
+                    <input
+                      name="email"
+                      placeholder="email"
+                      className={styles.modalInput}
+                      value={email}
+                      required
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    {linkError && (
+                      <p className={styles.error}>
+                        {t("modal.error")}
+                      </p>
+                    )}
+                    {emailError && (
+                      <p className={styles.error}>
+                        {t("modal.errorEmail")}
+                      </p>
+                    )}
+                    <Button text={t("modal.send")} />
+                  </form>
+                </>
+              )}
             </div>
           </div>
         </div>
