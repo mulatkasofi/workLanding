@@ -1,7 +1,6 @@
 import firstImg from '../img/workIcons/workImg1.png';
 import secondImg from '../img/workIcons/workImg2.png';
 import thirdImg from '../img/workIcons/workImg3.png';
-import foursImg from '../img/workIcons/workImg4.png';
 import fifthImg from '../img/workIcons/workImg5.png';
 import sixImg from '../img/workIcons/workImg6.png';
 import sevenImg from '../img/workIcons/workImg7.png';
@@ -43,11 +42,6 @@ export const useImageForSliderArrowData = () => {
       link: "https://www.behance.net/gallery/193342945/onlajn-shkola-jazykov-programmirovanija",
       img: thirdImg,
       title: t("latestWorkSlide.onlineSchool"),
-    },
-    {
-      link: "https://www.behance.net/gallery/204216195/lending-dlja-kompanii-vakuumnyh-upakovschikov?",
-      img: foursImg,
-      title: t("latestWorkSlide.landingPage"),
     },
     {
       link: "https://www.behance.net/gallery/193343855/lending-barbershop",
