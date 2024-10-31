@@ -14,7 +14,7 @@ i18n.use(initReactI18next).init({
   lng: "en",
   fallbackLng: "en",
   detection: {
-    order: ["querystring", "cookie", "localStorage", "navigator"],
+    order: ["cookie", "localStorage", "navigator"],
     lookupQuerystring: "lng",
   },
   debug: true,

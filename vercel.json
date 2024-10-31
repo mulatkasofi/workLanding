@@ -1,7 +1,0 @@
-{
-  "routes": [
-    { "src": "/ru/(.*)", "dest": "./public/locales/ru" },
-    { "src": "/en/(.*)", "dest": "./public/locales/en" },
-    { "src": "/(.*)", "dest": "./public/locales/en" }
-  ]
-}

@@ -5,7 +5,6 @@ import i18n from "../i18n";
 
 const ClientComponent = () => {
   const [isInitialized, setIsInitialized] = useState(false);
-  console.log(isInitialized);
 
   useEffect(() => {
     const initializeI18n = async () => {
