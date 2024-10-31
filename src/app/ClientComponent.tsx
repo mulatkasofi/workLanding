@@ -5,11 +5,14 @@ import i18n from "../i18n";
 
 const ClientComponent = () => {
   const [isInitialized, setIsInitialized] = useState(false);
+  console.log(isInitialized);
 
   useEffect(() => {
     const initializeI18n = async () => {
       await i18n.init();
-      await i18n.changeLanguage("en"); 
+      if (!i18n.language) {
+        await i18n.changeLanguage("en");
+      }
       setIsInitialized(true);
     };
 
