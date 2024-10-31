@@ -5,16 +5,12 @@ import i18n from "../i18n";
 
 const ClientComponent = () => {
   const [isInitialized, setIsInitialized] = useState(false);
-  console.log(isInitialized);
-  
 
   useEffect(() => {
     const initializeI18n = async () => {
       await i18n.init();
-      if (!i18n.language) {
-        await i18n.changeLanguage("en");
-      }
-      setIsInitialized(true); 
+      await i18n.changeLanguage("en"); 
+      setIsInitialized(true);
     };
 
     initializeI18n();
@@ -24,7 +20,7 @@ const ClientComponent = () => {
     return <div>Loading translations...</div>;
   }
 
-  return null; 
+  return null;
 };
 
 export default ClientComponent;

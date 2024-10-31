@@ -8,18 +8,18 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      ru: {
-        translation: translationRU,
-      },
       en: {
         translation: translationEN,
+      },
+      ru: {
+        translation: translationRU,
       },
     },
     lng: "en",
     fallbackLng: "en",
     debug: true,
     detection: {
-      order: [], 
+      order: [],
     },
     interpolation: {
       escapeValue: false,
