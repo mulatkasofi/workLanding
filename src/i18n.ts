@@ -18,6 +18,9 @@ i18n
     lng: "en",
     fallbackLng: "en",
     debug: true,
+    detection: {
+      order: [], 
+    },
     interpolation: {
       escapeValue: false,
     },
