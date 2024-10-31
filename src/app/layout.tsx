@@ -1,6 +1,6 @@
 import "./reset.css";
 import "./globals.css";
-import React from "react";
+import React, { Suspense } from "react";
 import type { Metadata } from "next";
 import ClientComponent from "./ClientComponent";
 import Cursor from "../components/Cursor/Cursor";
@@ -18,12 +18,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="en">
       <Head>
         <meta name="googlebot" content="noindex" />
       </Head>
-      <ClientComponent />
       <body>
+        <Suspense fallback={<div>Loading translations...</div>}>
+          <ClientComponent />
+        </Suspense>
         {children}
         <Cursor />
       </body>
