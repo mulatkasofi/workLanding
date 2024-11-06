@@ -10,8 +10,8 @@ const SiteTypes = ({ text, title, type, days, price }: SiteTypesProps) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   return (
-    <div className={styles.siteTypesWrap} onClick={() => setOpen(!open)}>
-      <div className={styles.siteTypeInfo}>
+    <div className={styles.siteTypesWrap}>
+      <div className={styles.siteTypeInfo} onClick={() => setOpen(!open)}>
         <h3 className={styles.siteTypeTitle}>{title}</h3>
         <div className={styles.siteTypes}>
           {type.map((i, index) => (
@@ -32,7 +32,10 @@ const SiteTypes = ({ text, title, type, days, price }: SiteTypesProps) => {
             {t("siteTypesCard.otherText.days")}
           </p>
         </div>
-        <button className={styles.siteTypeButton}>
+        <button
+          className={styles.siteTypeButton}
+          onClick={() => setOpen(!open)}
+        >
           <Image src={arrowToContact} alt={""} />
         </button>
         {open && <Modal isOpen={open} onClose={() => setOpen(!open)} />}

@@ -14,7 +14,7 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState("");
   const [linkError, setLinkError] = useState(false);
   const [emailError, setEmailError] = useState(false);
-  const [isSent, setIsSent] = useState(false); // Добавлено состояние для отслеживания успешной отправки
+  const [isSent, setIsSent] = useState(false); 
 
   const urlPattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w- ./?%&=]*)?$/i;
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
